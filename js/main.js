@@ -5,10 +5,14 @@ var ViewThree = $('.view-3');
 var ViewFour = $('.view-4');
 var ViewFive = $('.view-5');
 var ViewSix = $('.view-6');
+var footer = $('.p-footer-content');
 
-
+var viewOneFooter = "<b>Note:</b> This is for illustration purpose only.";
+var viewTwoFooter = "Source: 1. AIA Health Matters Survey 2016 <br/> <b>Note:</b> This is for illustration purpose only.";
+var viewThreeFooter = "<b>Note:</b> This is for illustration purpose only.";
 var viewFourFooter = "<b>Note:</b> This is for illustration purpose only. For more details and illustration of higher sum assured amount, you should refer to the Benefit Illustration, which can be obtained from your AIA Financial Services Consultant.";
-
+var viewFiveFooter = "1.  For Life plan, a Maturity Benefit of 100% of your sum assured amount (less any critical illness claims paid) will be payable if you wish to hold your policy until maturity (age 100). <br/> 2.  The surrender value illustrated is based on the assumption that no critical illness claim is paid. <br/> <b>Note:</b> This is for illustration purpose only. Premiums illustrated are non-guaranteed. For more details, you should refer to the Benefit Illustration, which can be obtained from your AIA Financial Services Consultant.";
+var viewFiveSectionTwoFooter = "1  Premium discount is based on standard life and will not be applicable on any extra premiums due to loading.  2  The additional 5% special discount is only applicable in the first policy year and is subject to promotion period. Each member starts off with Bronze Vitality Status.  3  Based on the assumption that members remain on the Platinum Vitality status from second policy year to age 75. The maximum premium discount figures illustrated are rounded down to the nearest S$100. <br/> <b>Note:</b> This is for illustration purpose only.";
 
 //------------------------------------------------------------------------------
 // View 1
@@ -25,14 +29,16 @@ $('.btn-no').click(function() {
 });
 
 $('#btn-view-one-next').click(function() {
-  ViewOne.css('display', 'none');
+  ViewOne.fadeOut();
 
   var btnYesHaveActive = $('.ul-option-container').find('.li-md').children('.btn-yes.active');
   console.log(btnYesHaveActive);
   if (btnYesHaveActive.length > 0) {
-    ViewThree.css('display', 'block');
+    ViewThree.fadeIn();
+    footer.html(viewThreeFooter);
   } else {
-    ViewTwo.css('display', 'block');
+    ViewTwo.fadeIn();
+    footer.html(viewTwoFooter);
   }
 });
 
@@ -42,8 +48,9 @@ $('#btn-view-one-next').click(function() {
 //------------------------------------------------------------------------------
 
 $('#btn-view-two-next').click(function() {
-  ViewTwo.css('display', 'none');
-  ViewThree.css('display', 'block');
+  ViewTwo.fadeOut();
+  ViewThree.fadeIn();
+  footer.html(viewThreeFooter);
 });
 
 
@@ -52,8 +59,9 @@ $('#btn-view-two-next').click(function() {
 //------------------------------------------------------------------------------
 
 $('#btn-view-three-next').click(function() {
-  ViewThree.css('display', 'none');
-  ViewFour.css('display', 'block');
+  ViewThree.fadeOut();
+  ViewFour.fadeIn();
+  footer.html(viewFourFooter);
 });
 
 
@@ -308,6 +316,7 @@ $('.btn-view-four-next').click(function() {
   initializeViewFive();
   ViewFour.fadeOut();
   ViewFive.fadeIn();
+  footer.html(viewFiveFooter);
 });
 
 
@@ -409,12 +418,14 @@ $('.btn-view-five-vitality').click(function() {
   } else {
     viewFiveSectionOne.fadeOut();
     viewFiveSectionTwo.fadeIn();
+    footer.html(viewFiveSectionTwo);
   }
 });
 
 $('.btn-view-five-back').click(function() {
   viewFiveSectionOne.fadeIn();
   viewFiveSectionTwo.fadeOut();
+  footer.html(viewFiveFooter);
 });
 
 $('.btn-view-five-next').click(function() {
