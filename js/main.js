@@ -305,7 +305,9 @@ $('.btn-view-four-next').click(function() {
   window.localStorage.setItem("ageValueAtWidth", ageValueAtWidth);
   window.localStorage.setItem("coveredValueAtWidth", coveredValueAtWidth);
 
-
+  initializeViewFive();
+  ViewFour.fadeOut();
+  ViewFive.fadeIn();
 });
 
 
@@ -362,6 +364,7 @@ $(document).ready(function() {
 var vitalityErrorMessage = $('.div-membership-error-message');
 var viewFiveSectionOne = $('.view-five-section-one');
 var viewFiveSectionTwo = $('.view-five-section-two');
+var minVitalityPremium = 18;
 
 function initializeViewFive() {
   // Age
@@ -379,16 +382,16 @@ function initializeViewFive() {
   }
   $('.span-review-smoker').html(smokerText);
   // sum assure
-  $('.span-review-covered').html("S$" + Number(covered).toLocaleString('en'));
+  $('.span-review-covered').html("S$" + Number(covered * 1000).toLocaleString('en'));
 
   //values
-  $('.div-value-1').html(Number(covered).toLocaleString('en'));
+  $('.div-value-1').html(Number(covered * 1000).toLocaleString('en'));
   //$('.div-value-2').html(Number(covered).toLocaleString('en'));
   //$('.div-value-3').html(Number(covered).toLocaleString('en'));
   //$('.div-value-4').html(Number(covered).toLocaleString('en'));
   //$('.div-value-5').html(Number(covered).toLocaleString('en'));
   // lifes
-  $('.div-life-1').html(Number(covered).toLocaleString('en'));
+  $('.div-life-1').html(Number(covered * 1000).toLocaleString('en'));
   //$('.div-life-2').html(Number(covered).toLocaleString('en'));
   //$('.div-life-3').html(Number(covered).toLocaleString('en'));
   //$('.div-life-4').html(Number(covered).toLocaleString('en'));
@@ -396,7 +399,7 @@ function initializeViewFive() {
 }
 
 $('.btn-view-five-vitality').click(function() {
-  if (age < 0) {
+  if (age < minVitalityPremium) {
     vitalityErrorMessage.addClass('shake')
     .fadeIn(function() {
       setTimeout(function() {
@@ -404,14 +407,14 @@ $('.btn-view-five-vitality').click(function() {
       }, 2000);
     });
   } else {
-    viewFiveSectionOne.fadeOut(300);
-    viewFiveSectionTwo.fadeIn(300);
+    viewFiveSectionOne.fadeOut();
+    viewFiveSectionTwo.fadeIn();
   }
 });
 
 $('.btn-view-five-back').click(function() {
-  viewFiveSectionOne.fadeIn(300);
-  viewFiveSectionTwo.fadeOut(300);
+  viewFiveSectionOne.fadeIn();
+  viewFiveSectionTwo.fadeOut();
 });
 
 $('.btn-view-five-next').click(function() {
