@@ -29,7 +29,7 @@ $('.btn-no').click(function() {
 });
 
 $('#btn-view-one-next').click(function() {
-  ViewOne.fadeOut();
+  ViewOne.fadeOut(200);
 
   var btnYesHaveActive = $('.ul-option-container').find('.li-md').children('.btn-yes.active');
   console.log(btnYesHaveActive);
@@ -48,7 +48,7 @@ $('#btn-view-one-next').click(function() {
 //------------------------------------------------------------------------------
 
 $('#btn-view-two-next').click(function() {
-  ViewTwo.fadeOut();
+  ViewTwo.fadeOut(200);
   ViewThree.fadeIn();
   footer.html(viewThreeFooter);
 });
@@ -59,7 +59,7 @@ $('#btn-view-two-next').click(function() {
 //------------------------------------------------------------------------------
 
 $('#btn-view-three-next').click(function() {
-  ViewThree.fadeOut();
+  ViewThree.fadeOut(200);
   ViewFour.fadeIn();
   footer.html(viewFourFooter);
 });
@@ -136,7 +136,7 @@ function showSmokeErrorMessage() {
   .addClass('shake')
   .fadeIn(function() {
     setTimeout(function() {
-      smokeErrorMessage.removeClass('shake').fadeOut();
+      smokeErrorMessage.removeClass('shake').fadeOut(200);
     }, 2000);
   });
 }
@@ -314,7 +314,7 @@ $('.btn-view-four-next').click(function() {
   window.localStorage.setItem("coveredValueAtWidth", coveredValueAtWidth);
 
   initializeViewFive();
-  ViewFour.fadeOut();
+  ViewFour.fadeOut(200);
   ViewFive.fadeIn();
   footer.html(viewFiveFooter);
 });
@@ -412,19 +412,19 @@ $('.btn-view-five-vitality').click(function() {
     vitalityErrorMessage.addClass('shake')
     .fadeIn(function() {
       setTimeout(function() {
-        vitalityErrorMessage.removeClass('shake').fadeOut();
+        vitalityErrorMessage.removeClass('shake').fadeOut(200);
       }, 2000);
     });
   } else {
-    viewFiveSectionOne.fadeOut();
+    viewFiveSectionOne.fadeOut(200);
     viewFiveSectionTwo.fadeIn();
-    footer.html(viewFiveSectionTwo);
+    footer.html(viewFiveSectionTwoFooter);
   }
 });
 
 $('.btn-view-five-back').click(function() {
   viewFiveSectionOne.fadeIn();
-  viewFiveSectionTwo.fadeOut();
+  viewFiveSectionTwo.fadeOut(200);
   footer.html(viewFiveFooter);
 });
 
