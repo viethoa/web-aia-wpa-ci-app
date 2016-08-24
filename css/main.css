@@ -1,0 +1,59 @@
+@font-face {
+  font-family: aiasans-condensed;
+  src: url(../fonts/AIASans-Condensed-500.ttf);
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  padding: 0px;
+  color: #363E3F;
+  position: fixed;
+  line-height: 1.2;
+  background-color: #fff;
+  font-family: aiasans-condensed;
+}
+
+header {
+  background-color: #D31145;
+  color: #ffffff;
+}
+.div-app-logo {
+  margin: auto;
+  height: 100%;
+  text-align: center;
+}
+.div-app-logo .img-logo {
+  height: 75px;
+}
+
+footer {
+  bottom: 0px;
+  width: 100%;
+  position: fixed;
+  text-align: left;
+  font-size: 1.3rem;
+  padding: 16px 22px;
+  font-family: serif;
+  background-color: #DDDDDD;
+}
+p {
+  margin: 0px;
+  padding: 0px;
+}
+
+paper-button {
+  cursor: pointer;
+  box-shadow:rgba(0, 0, 0, 0.2) 0 5px 5px 0;
+  -webkit-box-shadow:rgba(0, 0, 0, 0.2) 0 5px 5px 0;
+  -moz-box-shadow:rgba(0, 0, 0, 0.2) 0 5px 5px 0;
+}
+
+.color-primary {
+  color: #D31145;
+}
+
+
+
+

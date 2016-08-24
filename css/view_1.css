@@ -1,0 +1,93 @@
+.div-container {
+  /*box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);*/
+}
+.ul-title-container, .ul-info-container, .ul-option-container {
+  width: 100%;
+  padding: 30px 0px 0px 48px;
+  list-style: none;
+}
+.ul-title-container li, .ul-info-container li, .ul-option-container li {
+  float: left;
+}
+.ul-title-container p {
+  text-transform: uppercase;
+  font-size: 4rem;
+  margin: 0px;
+  padding: 0px;
+}
+.ul-title-container paper-button {
+  background-color: #D31145;
+  color: #ffffff;
+  cursor: pointer;
+  border-radius: 0px;
+  font-size: 2rem;
+  right: 30px;
+  padding: 10px 90px;
+  position: absolute;
+  margin-top: 15px;
+}
+.ul-info-container, .ul-option-container {
+  margin: 0px;
+  margin-top: 130px;
+  padding: 0px;
+  display: flex;
+}
+.ul-info-container li, .ul-option-container li {
+  text-align: center;
+}
+.ul-info-container .li-two, .ul-option-container .li-two {
+  width: 32%;
+}
+.ul-info-container .li-one, .ul-info-container .li-three,
+.ul-option-container .li-one, .ul-option-container .li-three {
+  width: 34%;
+}
+.ul-info-container li img {
+  width: 281px;
+}
+.ul-option-container {
+  margin-top: 5px;
+}
+.ul-option-container li paper-button {
+  color: #596C80;
+  border: 1px #596C80 solid;
+  border-radius: 0px;
+  font-size: 1.8rem;
+  padding: 8px 30px;
+}
+.ul-option-container li paper-button iron-icon {
+  margin-right: 5px;
+}
+.ul-option-container li paper-button.active {
+  background-color: #596C80;
+  color: #ffffff;
+}
+.ul-option-container li paper-button.btn-yes.active {
+  margin-right: -30px;
+}
+.ul-option-container li paper-button.btn-no.active {
+  margin-left: -30px;
+}
+.ul-option-container li paper-button.btn-no {
+  margin-left: 30px;
+}
+.ul-option-container li paper-button.btn-yes {
+  margin-right: 30px;
+}
+.ul-option-container li paper-button.active span {
+  width: 14px;
+  opacity: 1;
+  font-size: 1.5rem;
+  font-weight: 100;
+  margin-left: 0.8rem;
+  margin-right: 0.8rem;
+}
+.ul-option-container li paper-button span {
+  width: 0px;
+  opacity: 0;
+}
+
+
+
+
+

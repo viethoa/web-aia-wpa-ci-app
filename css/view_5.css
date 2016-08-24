@@ -1,0 +1,150 @@
+.view-five-section-one {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+.view-five-section-two {
+  height: 100%;
+  width: 100%;
+  display: none;
+  position: absolute;
+}
+
+.div-plan-comparison-background {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-image: url(../images/view_5_ci_plan_background.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.div-vitality-premium-background {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-image: url(../images/view_5_discount_background.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+paper-button.btn-view-five-next {
+
+}
+paper-button.btn-view-five-vitality {
+  right: 265px;
+  padding: 10px 20px;
+}
+paper-button.btn-view-five-back {
+  right: 265px;
+}
+
+.div-review-self {
+  margin-top: 40px;
+  font-size: 2.2rem;
+  position: absolute;
+  margin-left: 32px;
+  line-height: 1.3;
+}
+.div-membership-error-message {
+  display: none;
+  position: absolute;
+  margin-top: 55px;
+  margin-left: 497px;
+  font-size: 1.6rem;
+  font-family: serif;
+  line-height: 1.1;
+  text-align: center;
+  width: 262px;
+}
+.div-value-1, .div-value-2, .div-value-3, .div-value-4, .div-value-5, .div-value-6, .div-value-7,
+.div-life-1, .div-life-2, .div-life-3, .div-life-4, .div-life-5, .div-life-6, .div-life-7 {
+  position: absolute;
+  font-size: 2rem;
+}
+.div-value-1 {
+  margin-top: 201px;
+  margin-left: 501px;
+}
+.div-value-2 {
+  width: 81px;
+  margin-top: 248px;
+  margin-left: 475px;
+  text-align: center;
+}
+.div-value-3 {
+  width: 81px;
+  text-align: center;
+  margin-top: 381px;
+  margin-left: 475px;
+}
+.div-value-4 {
+  width: 81px;
+  text-align: center;
+  margin-top: 429px;
+  margin-left: 475px;
+}
+.div-value-5 {
+  width: 81px;
+  text-align: center;
+  margin-top: 476px;
+  margin-left: 475px;
+}
+.div-value-6 {
+  width: 100px;
+  text-align: center;
+  margin-top: 162px;
+  margin-left: 462px;
+}
+.div-value-7 {
+  width: 100px;
+  text-align: center;
+  margin-top: 235px;
+  margin-left: 465px;
+}
+.div-life-1 {
+  margin-top: 201px;
+  margin-left: 821px;
+}
+.div-life-2 {
+  width: 81px;
+  margin-top: 248px;
+  margin-left: 796px;
+  text-align: center;
+}
+.div-life-3 {
+  width: 81px;
+  text-align: center;
+  margin-top: 381px;
+  margin-left: 796px;
+}
+.div-life-4 {
+  width: 81px;
+  text-align: center;
+  margin-top: 429px;
+  margin-left: 796px;
+}
+.div-life-5 {
+  width: 81px;
+  text-align: center;
+  margin-top: 465px;
+  margin-left: 796px;
+}
+.div-life-6 {
+  width: 100px;
+  text-align: center;
+  margin-top: 162px;
+  margin-left: 785px;
+}
+.div-life-7 {
+  width: 100px;
+  text-align: center;
+  margin-top: 235px;
+  margin-left: 788px;
+}
+
+
+
+
+
+
+

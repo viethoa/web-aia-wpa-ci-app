@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>AIA WPA CI APP</title>
+  <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/ripple.css">
+  <link rel="stylesheet" href="css/shake.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/view_1.css">
+  <link rel="stylesheet" href="css/view_2.css">
+  <link rel="stylesheet" href="css/view_3.css">
+  <link rel="stylesheet" href="css/view_4.css">
+  <link rel="stylesheet" href="css/view_5.css">
+  <link rel="stylesheet" href="css/view_6.css">
+  <style type="text/css" media="screen">
+    .view-1 {
+      display: none;
+    }
+    .view-2 {
+      display: none;
+    }
+    .view-3 {
+      display: none;
+    }
+    .view-4 {
+      display: none;
+    }
+    .view-5 {
+      display: block;
+    }
+    .view-6 {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- toolbar -->
+  <header id="header" class="">
+    <div class="div-app-logo">
+      <img class="img-logo" src="images/icon_logo.png">
+    </div>
+  </header>
+
+  <!-- View 1 -->
+  <div class="view-1">
+    <div class="div-container">
+      <ul class="ul-title-container">
+        <li class="li-left"><p>What do you want in a <br/> critical illness plan ?</p></li>
+        <li class="li-right"><paper-button id="btn-view-one-next">NEXT</paper-button></li>
+      </ul>
+      <br/>
+      <ul class="ul-info-container">
+        <li class="li-md li-one">
+          <img src="../images/view-1-option-1.jpg" alt="">
+        </li>
+        <li class="li-md li-two">
+          <img src="../images/view-1-option-2.jpg" alt="">
+        </li>
+        <li class="li-md li-three">
+          <img src="../images/view-1-option-3.jpg" alt="">
+        </li>
+      </ul>
+      <br/>
+      <ul class="ul-option-container">
+        <li class="li-md li-one">
+          <paper-button class="btn-yes active">
+            <span class="glyphicon glyphicon-ok"></span> YES
+          </paper-button>
+          <paper-button on-tap="_btnOption1NoClicked" class="btn-no">
+            <span class="glyphicon glyphicon-ok"></span> NO
+          </paper-button>
+        </li>
+        <li class="li-md li-two">
+          <paper-button class="btn-yes active">
+            <span class="glyphicon glyphicon-ok"></span> YES
+          </paper-button>
+          <paper-button class="btn-no">
+            <span class="glyphicon glyphicon-ok"></span> NO
+          </paper-button>
+        </li>
+        <li class="li-md li-three">
+          <paper-button class="btn-yes active">
+            <span class="glyphicon glyphicon-ok"></span> YES
+          </paper-button>
+          <paper-button class="btn-no">
+            <span class="glyphicon glyphicon-ok"></span> NO
+          </paper-button>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+
+  <!-- View 2 -->
+  <div class="view-2">
+    <div class="div-container">
+      <ul class="ul-title-container">
+        <li class="li-left"></li>
+        <li class="li-right"><paper-button id="btn-view-two-next">NEXT</paper-button></li>
+      </ul>
+      <br/>
+      <div class="div-content">
+        <img src="images/view-2-content.jpg" alt="">
+      </div>
+    </div>
+  </div>
+
+
+  <!-- View 3 -->
+  <div class="view-3">
+    <div class="div-container">
+      <ul class="ul-title-container">
+        <li class="li-left"><p>How aia triple critical cover <br/> can help</p></li>
+        <li class="li-right"><paper-button id="btn-view-three-next">NEXT</paper-button></li>
+      </ul>
+      <br/>
+      <div class="div-content">
+        <img src="images/view-3-content.jpg" alt="">
+      </div>
+    </div>
+  </div>
+
+
+  <!-- View 4 -->
+  <div class="view-4">
+    <div class="div-container">
+      <ul class="ul-title-container">
+        <li class="li-right"><paper-button class="btn-view-four-clear ripple disable">CLEAR</paper-button></li>
+        <li class="li-right"><paper-button class="btn-view-four-next ripple disable">NEXT</paper-button></li>
+      </ul>
+      <ul class="ul-gender-smker-images">
+        <li class="li-female"><img class="img-female"></li>
+        <li class="li-male"><img class="img-male"></li>
+        <li class="li-smker"><img class="img-smoker"></li>
+        <li class="li-non-smoker"><img class="img-non-smoker"></li>
+      </ul>
+      <div class="div-smoke-option-error-message">
+        SMOKER STATUS IS NOT VALID FOR JUVENILE CASE
+      </div>
+      <div class="div-age-pointer">
+        <div class="div-age-text">
+          <span class="span-age-text">2 WEEKS</span>
+        </div>
+        <img id="img-age-pointer" src="images/view_4_pointer.png">
+      </div>
+      <div class="div-covered-pointer">
+        <div class="div-covered-text">
+          <span class="span-covered-text">S$50K</span>
+        </div>
+        <img id="img-covered-pointer" src="images/view_4_pointer.png">
+      </div>
+      <div class="smoker-disable-mask"></div>
+      <div class="age-disable-mask"></div>
+      <div class="covered-disable-mask"></div>
+    </div>
+  </div>
+
+
+  <!-- View 5 -->
+  <div class="view-5">
+    <div class="view-five-section-one">
+      <div class="div-plan-comparison-background"></div>
+      <ul class="ul-title-container">
+        <li class="li-right"><paper-button class="btn-view-five-vitality ripple">AIA VITALITY PREMIUM DISCOUNT</paper-button></li>
+        <li class="li-right"><paper-button class="btn-view-five-next ripple">NEXT</paper-button></li>
+      </ul>
+      <div class="div-review-self">
+        I'M A <span class="color-primary span-review-age">17</span> YEARS OLD
+        <span class="color-primary span-review-gender">FAMALE</span>, <br/>
+        <span class="color-primary span-review-smoker">NON-SMOKER</span>, SUM ASSURED
+        <span class="color-primary span-review-covered">S$2600,000</span>.
+      </div>
+      <div class="div-membership-error-message color-primary">
+        AIA Vitality membership is only <br/>
+        applicable for age 18 and above.
+      </div>
+      <div class="div-value-1">260,000</div>
+      <div class="div-value-2">2,293.20</div>
+      <div class="div-value-3">133,005.60</div>
+      <div class="div-value-4">N.A</div>
+      <div class="div-value-5">133,005.60</div>
+      <div class="div-life-1">260,000</div>
+      <div class="div-life-2">3,236.22</div>
+      <div class="div-life-3">187,700.76</div>
+      <div class="div-life-4">195,000.00</div>
+      <div class="div-life-5">-7,299.24</div>
+    </div>
+    <div class="view-five-section-two">
+      <div class="div-vitality-premium-background"></div>
+      <ul class="ul-title-container">
+        <li class="li-right"><paper-button class="btn-view-five-back ripple">BACK</paper-button></li>
+        <li class="li-right"><paper-button class="btn-view-five-next ripple">NEXT</paper-button></li>
+      </ul>
+      <div class="div-review-self">
+        I'M A <span class="color-primary span-review-age">17</span> YEARS OLD
+        <span class="color-primary span-review-gender">FAMALE</span>, <br/>
+        <span class="color-primary span-review-smoker">NON-SMOKER</span>, SUM ASSURED
+        <span class="color-primary span-review-covered">S$2600,000</span>.
+      </div>
+      <div class="div-value-6">234.94</div>
+      <div class="div-value-7">UP TO 19,400</div>
+      <div class="div-life-6">333.45</div>
+      <div class="div-life-7">UP TO 27,600</div>
+    </div>
+  </div>
+
+
+  <!-- View 6 -->
+  <div class="view-6">
+    <div id="parallax-wrapper">
+      <div id="parallax-background"></div>
+    </div>
+    <div class="walker-wrapper active">
+      <div id="walker-background-1"></div>
+      <div id="walker-background-2"></div>
+      <div id="walker-background-3"></div>
+      <div id="walker-background-4"></div>
+    </div>
+    <div class="rain-cloud-wrapper active">
+      <div id="rain-cloud-background-1"></div>
+      <div id="rain-cloud-background-2"></div>
+      <div id="rain-cloud-background-3"></div>
+      <div id="rain-cloud-background-4"></div>
+    </div>
+    <div id="div-message">
+      <p class="p-year-old-message">
+        <span id="span-year-old">35</span> YEARS OLD, <br/>
+      </p>
+      <p class="p-sum-assured">
+        SUM ASSURED <span id="span-money">S$150,000</span>
+      </p>
+      <p class="p-power-reset-message">
+        POWER RESET IN <span id="p-power-set-month">10 MONTHS</span>
+      </p>
+      <p class="p-claimed-for-major">CLAIMED FOR MAJOR</p>
+      <p class="p-stage-critical-illness" id="span-received-monmey">STAGE CRITICAL ILLNESS</p>
+    </div>
+    <div id="div-age-bar-empty"></div>
+    <div id="div-age-bar-wrapper">
+      <div id="div-age-bar-background"></div>
+    </div>
+    <span class="span-number" id="span-first-year-old">35</span>
+    <span class="span-number" id="span-second-year-old">40</span>
+    <span class="span-number" id="span-3rd-year-old">41</span>
+    <span class="span-number" id="span-4th-year-old">75</span>
+  </div>
+
+  <!-- Footer  -->
+  <footer>
+    <p class="p-footer-content">
+      1.  For Life plan, a Maturity Benefit of 100% of your sum assured amount (less any critical illness claims paid) will be payable if you wish to hold your policy until maturity (age 100). <br/>
+      2.  The surrender value illustrated is based on the assumption that no critical illness claim is paid. <br/>
+      <b>Note:</b> This is for illustration purpose only. Premiums illustrated are non-guaranteed. For more details, you should refer to the Benefit Illustration, which can be obtained from your AIA Financial Services Consultant.
+    </p>
+  </footer>
+
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery-ui.min.js"></script>
+  <script src="js/jquery.ui.touch-punch.min.js"></script>
+  <!-- <script src="js/bootstrap.min.js"></script> -->
+  <script src="js/ripple.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

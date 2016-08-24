@@ -1,0 +1,291 @@
+
+/* For background */
+@-webkit-keyframes animatedBackground {
+  0% { transform: translateX(0) }
+  100% { transform: translateX(-903px) }
+}
+@keyframes animatedBackground {
+  0% { transform: translateX(0) }
+  100% { transform: translateX(-903px) }
+}
+#parallax-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin-top: 65px;
+  overflow: hidden;
+}
+#parallax-background {
+  position: relative;
+  width: 3612px;
+  height: 100%;
+  background: url(../images/view-6-background.png) repeat 0 0;
+  -webkit-animation: animatedBackground 10s linear infinite;
+  animation: animatedBackground 10s linear infinite;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+/* For Walker */
+@keyframes animatedWalkerUnhappyOne {
+  0% { opacity: 1; }
+  25% { opacity: 1; }
+  26% { opacity: 0; }
+  100% { opacity: 0; }
+}
+@keyframes animatedWalkerUnhappyTwo {
+  0% { opacity: 0; }
+  24% { opacity: 0; }
+  25% { opacity: 1; }
+  50% { opacity: 1; }
+  51% { opacity: 0; }
+  100% { opacity: 0; }
+}
+@keyframes animatedWalkerUnhappyThree {
+  0% { opacity: 0; }
+  49% { opacity: 0; }
+  50% { opacity: 1; }
+  75% { opacity: 1; }
+  76% { opacity: 0; }
+  100% { opacity: 0; }
+}
+@keyframes animatedWalkerUnhappyFour {
+  0% { opacity: 0; }
+  74% { opacity: 0; }
+  75% { opacity: 1; }
+  100% { opacity: 1; }
+}
+@-webkit-keyframes animatedWalkerUnhappyOne {
+  0% { opacity: 1; }
+  25% { opacity: 1; }
+  26% { opacity: 0; }
+  100% { opacity: 0; }
+}
+@-webkit-keyframes animatedWalkerUnhappyTwo {
+  0% { opacity: 0; }
+  24% { opacity: 0; }
+  25% { opacity: 1; }
+  50% { opacity: 1; }
+  51% { opacity: 0; }
+  100% { opacity: 0; }
+}
+@-webkit-keyframes animatedWalkerUnhappyThree {
+  0% { opacity: 0; }
+  49% { opacity: 0; }
+  50% { opacity: 1; }
+  75% { opacity: 1; }
+  76% { opacity: 0; }
+  100% { opacity: 0; }
+}
+@-webkit-keyframes animatedWalkerUnhappyFour {
+  0% { opacity: 0; }
+  74% { opacity: 0; }
+  75% { opacity: 1; }
+  100% { opacity: 1; }
+}
+.walker-wrapper {
+
+}
+#walker-background-1, #walker-background-2, #walker-background-3, #walker-background-4 {
+  width: 230px;
+  height: 230px;
+  bottom: 22px;
+  left: 50px;
+  position: absolute;
+}
+#walker-background-1 {
+  opacity: 1;
+  background: url(../images/Female_walker_unhappy_1.png) repeat 0 0;
+  background-size: contain;
+  -webkit-animation: animatedWalkerUnhappyOne 0.7s linear infinite;
+  -moz-animation: animatedWalkerUnhappyOne 0.7s linear infinite;
+  -o-animation: animatedWalkerUnhappyOne 0.7s linear infinite;
+  animation: animatedWalkerUnhappyOne 0.7s linear infinite;
+
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+#walker-background-2 {
+  opacity: 0;
+  background: url(../images/Female_walker_unhappy_2.png) repeat 0 0;
+  background-size: contain;
+  -webkit-animation: animatedWalkerUnhappyTwo 0.7s linear infinite;
+  -moz-animation: animatedWalkerUnhappyTwo 0.7s linear infinite;
+  -o-animation: animatedWalkerUnhappyTwo 0.7s linear infinite;
+  animation: animatedWalkerUnhappyTwo 0.7s linear infinite;
+
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+#walker-background-3 {
+  opacity: 0;
+  background: url(../images/Female_walker_unhappy_3.png) repeat 0 0;
+  background-size: contain;
+  -webkit-animation: animatedWalkerUnhappyThree 0.7s linear infinite;
+  -moz-animation: animatedWalkerUnhappyThree 0.7s linear infinite;
+  -o-animation: animatedWalkerUnhappyThree 0.7s linear infinite;
+  animation: animatedWalkerUnhappyThree 0.7s linear infinite;
+
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+#walker-background-4 {
+  opacity: 0;
+  background: url(../images/Female_walker_unhappy_4.png) repeat 0 0;
+  background-size: contain;
+  -webkit-animation: animatedWalkerUnhappyFour 0.7s linear infinite;
+  -moz-animation: animatedWalkerUnhappyFour 0.7s linear infinite;
+  -o-animation: animatedWalkerUnhappyFour 0.7s linear infinite;
+  animation: animatedWalkerUnhappyFour 0.7s linear infinite;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+
+/* rain cloud */
+#rain-cloud-background-1 {
+  opacity: 1;
+  display: none;
+  background: url(../images/rain_cloud_1.png) repeat 0 0;
+  background-size: contain;
+}
+#rain-cloud-background-2 {
+  opacity: 0;
+  display: none;
+  background: url(../images/rain_cloud_2.png) repeat 0 0;
+  background-size: contain;
+}
+#rain-cloud-background-3 {
+  opacity: 0;
+  display: none;
+  background: url(../images/rain_cloud_3.png) repeat 0 0;
+  background-size: contain;
+}
+#rain-cloud-background-4 {
+  opacity: 0;
+  display: none;
+  background: url(../images/rain_cloud_4.png) repeat 0 0;
+  background-size: contain;
+}
+.rain-cloud-wrapper.active #rain-cloud-background-1 {
+  display: block;
+  -webkit-animation: animatedWalkerUnhappyOne 0.4s linear infinite;
+  -moz-animation: animatedWalkerUnhappyOne 0.4s linear infinite;
+  -o-animation: animatedWalkerUnhappyOne 0.4s linear infinite;
+  animation: animatedWalkerUnhappyOne 0.4s linear infinite;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.rain-cloud-wrapper.active #rain-cloud-background-2 {
+  display: block;
+  -webkit-animation: animatedWalkerUnhappyTwo 0.4s linear infinite;
+  -moz-animation: animatedWalkerUnhappyTwo 0.4s linear infinite;
+  -o-animation: animatedWalkerUnhappyTwo 0.4s linear infinite;
+  animation: animatedWalkerUnhappyTwo 0.4s linear infinite;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.rain-cloud-wrapper.active #rain-cloud-background-3 {
+  display: block;
+  -webkit-animation: animatedWalkerUnhappyThree 0.4s linear infinite;
+  -moz-animation: animatedWalkerUnhappyThree 0.4s linear infinite;
+  -o-animation: animatedWalkerUnhappyThree 0.4s linear infinite;
+  animation: animatedWalkerUnhappyThree 0.4s linear infinite;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.rain-cloud-wrapper.active #rain-cloud-background-4 {
+  display: block;
+  -webkit-animation: animatedWalkerUnhappyFour 0.4s linear infinite;
+  -moz-animation: animatedWalkerUnhappyFour 0.4s linear infinite;
+  -o-animation: animatedWalkerUnhappyFour 0.4s linear infinite;
+  animation: animatedWalkerUnhappyFour 0.4s linear infinite;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+#rain-cloud-background-1, #rain-cloud-background-2, #rain-cloud-background-3, #rain-cloud-background-4 {
+  left: 50px;
+  width: 230px;
+  height: 230px;
+  bottom: 58px;
+  position: absolute;
+}
+
+/* Top bar right */
+#div-age-bar-wrapper {
+  top: 65px;
+  left: 505px;
+  width: 552px;
+  height: 115px;
+  overflow: hidden;
+  position: absolute;
+}
+#div-age-bar-background {
+  width: 485px;
+  height: 125px;
+  background: url('../images/view-6-age-bar.png');
+  position: relative;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-top: 10px;
+}
+#div-age-bar-empty {
+  top: 63px;
+  left: 504px;
+  width: 553px;
+  height: 125px;
+  position: absolute;
+  background: url('../images/view-6-age-bar-empty.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* Messages on the left */
+#div-message {
+  position: relative;
+  font-weight: 500;
+  font-size: 2.2rem;
+  margin-left: 35px;
+  margin-top: 25px;
+}
+.p-sum-assured {
+  font-size: 1.9rem;
+  margin-top: -10px;
+}
+#span-year-old {
+  color: #D31145;
+}
+#span-money {
+  color: #D31145;
+}
+#p-power-set-month {
+  color: #D31145;
+}
+#span-first-year-old {
+  left: 517px;
+}
+#span-second-year-old {
+  left: 666px;
+}
+#span-3rd-year-old {
+  left: 741px;
+}
+#span-4th-year-old {
+  left: 949px;
+}
+.span-number {
+  color: #ffffff;
+  position: absolute;
+  font-weight: 400;
+  font-size: 2.2rem;
+  top: 100px;
+  cursor: pointer;
+}
+.p-claimed-for-major {
+  margin-top: 50px;
+}
+.p-stage-critical-illness{
+  margin-top: -6px;
+}

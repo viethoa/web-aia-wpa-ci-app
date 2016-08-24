@@ -1,0 +1,124 @@
+.smoker-disable-mask {
+  width: 210px;
+  height: 160px;
+  margin-left: 279px;
+  position: absolute;
+  margin-top: -50px;
+  opacity: 0.8;
+  background: #fff;
+}
+.age-disable-mask {
+ width: 100%;
+ height: 165px;
+ position: absolute;
+ margin-top: 115px;
+ opacity: 0.8;
+ background: #fff;
+}
+.covered-disable-mask {
+ width: 100%;
+ height: 165px;
+ position: absolute;
+ margin-top: 280px;
+ opacity: 0.8;
+ background: #fff;
+}
+.disable {
+  opacity: 0.2;
+}
+
+paper-button.btn-view-four-clear {
+  right:275px;
+}
+
+.view-4 .div-container {
+  background-image: url(../images/view_4_background.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.ul-gender-smker-images {
+  list-style: none;
+  margin-top: 137px;
+}
+.ul-gender-smker-images li {
+  float: left;
+}
+.ul-gender-smker-images li img {
+  width: 68px;
+}
+.img-female {
+  content: url(../images/view_4_btn_female_normal.png);
+  margin-left: 22px;
+}
+.img-male {
+  content: url(../images/view_4_btn_male_normal.png);
+  margin-left: 27px;
+}
+.img-smoker {
+  content: url(../images/view_4_btn_smoker_normal.png);
+  margin-left: 67px;
+}
+.img-non-smoker {
+  content: url(../images/view_4_btn_nonsmoker_normal.png);
+  margin-left: 37px;
+}
+.img-female.selected {
+  content: url(../images/view_4_btn_female_selected.png);
+}
+.img-male.selected {
+  content: url(../images/view_4_btn_male_selected.png);
+}
+.img-smoker.selected {
+  content: url(../images/view_4_btn_smoker_selecte.png);
+}
+.img-non-smoker.selected {
+  content: url(../images/view_4_btn_nonsmoker_selected.png);
+}
+
+.div-smoke-option-error-message {
+  display: none;
+  color: #D31145;
+  font-size: 1.8rem;
+  position: absolute;
+  margin-top: 125px;
+  margin-left: 130px;
+}
+
+.div-age-pointer {
+  position: absolute;
+  margin-top: 159px;
+  margin-left: 36px;
+  left: 0px;
+}
+.div-covered-pointer {
+  position: absolute;
+  margin-top: 326px;
+  margin-left: 36px;
+  left: 0px;
+}
+.div-age-text, .div-covered-text {
+  position: absolute;
+  color: #ffffff;
+  font-size: 1.7rem;
+  width: 65px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+}
+.div-age-pointer img, .div-covered-pointer img {
+  width: 65px;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
