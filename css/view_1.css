@@ -48,45 +48,60 @@
 .ul-option-container {
   margin-top: 5px;
 }
-.ul-option-container li paper-button {
-  color: #596C80;
-  border: 1px #596C80 solid;
-  border-radius: 0px;
-  font-size: 1.8rem;
-  padding: 8px 30px;
-}
-.ul-option-container li paper-button iron-icon {
-  margin-right: 5px;
-}
-.ul-option-container li paper-button.active {
-  background-color: #596C80;
-  color: #ffffff;
-}
-.ul-option-container li paper-button.btn-yes.active {
-  margin-right: -30px;
-}
-.ul-option-container li paper-button.btn-no.active {
-  margin-left: -30px;
-}
-.ul-option-container li paper-button.btn-no {
-  margin-left: 30px;
-}
-.ul-option-container li paper-button.btn-yes {
-  margin-right: 30px;
-}
-.ul-option-container li paper-button.active span {
-  width: 14px;
-  opacity: 1;
-  font-size: 1.5rem;
-  font-weight: 100;
-  margin-left: 0.8rem;
-  margin-right: 0.8rem;
-}
-.ul-option-container li paper-button span {
-  width: 0px;
-  opacity: 0;
-}
+// .ul-option-container li paper-button {
+//   color: #596C80;
+//   border: 1px #596C80 solid;
+//   border-radius: 0px;
+//   font-size: 1.8rem;
+//   padding: 8px 30px;
+// }
+// .ul-option-container li paper-button iron-icon {
+//   margin-right: 5px;
+// }
+// .ul-option-container li paper-button.active {
+//   background-color: #596C80;
+//   color: #ffffff;
+// }
+// .ul-option-container li paper-button.btn-yes.active {
+//   margin-right: -30px;
+// }
+// .ul-option-container li paper-button.btn-no.active {
+//   margin-left: -30px;
+// }
+// .ul-option-container li paper-button.btn-no {
+//   margin-left: 30px;
+// }
+// .ul-option-container li paper-button.btn-yes {
+//   margin-right: 30px;
+// }
+// .ul-option-container li paper-button.active span {
+//   width: 14px;
+//   opacity: 1;
+//   font-size: 1.5rem;
+//   font-weight: 100;
+//   margin-left: 0.8rem;
+//   margin-right: 0.8rem;
+// }
+// .ul-option-container li paper-button span {
+//   width: 0px;
+//   opacity: 0;
+// }
 
+img.view-one-btn-yes.active, img.view-one-btn-no.active {
+  display: inline-block;
+}
+img.view-one-btn-yes {
+  display: none;
+  width: 220px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+img.view-one-btn-no {
+  display: none;
+  width: 220px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
 
 
 
