@@ -15,89 +15,91 @@ var viewThreeFooter = "<b>Note:</b> This is for illustration purpose only.";
 var viewFourFooter = "<b>Note:</b> This is for illustration purpose only. For more details and illustration of higher sum assured amount, you should refer to the Benefit Illustration, which can be obtained from your AIA Financial Services Consultant.";
 var viewFiveFooter = "1.  For Life plan, a Maturity Benefit of 100% of your sum assured amount (less any critical illness claims paid) will be payable if you wish to hold your policy until maturity (age 100). <br/> 2.  The surrender value illustrated is based on the assumption that no critical illness claim is paid. <br/> <b>Note:</b> This is for illustration purpose only. Premiums illustrated are non-guaranteed. For more details, you should refer to the Benefit Illustration, which can be obtained from your AIA Financial Services Consultant.";
 var viewFiveSectionTwoFooter = "1  Premium discount is based on standard life and will not be applicable on any extra premiums due to loading.  2  The additional 5% special discount is only applicable in the first policy year and is subject to promotion period. Each member starts off with Bronze Vitality Status.  3  Based on the assumption that members remain on the Platinum Vitality status from second policy year to age 75. The maximum premium discount figures illustrated are rounded down to the nearest S$100. <br/> <b>Note:</b> This is for illustration purpose only.";
+var viewSixFooter = "<b>Note:</b> This is for illustration purpose only.";
 
 
 function navigation(currentView, nextView) {
   switch(currentView) {
     case 1:
-      ViewOne.fadeOut(200);
-      previousPage.push("view-1");
-      break;
+    ViewOne.fadeOut(200);
+    previousPage.push("view-1");
+    break;
     case 2:
-      ViewTwo.fadeOut(200);
-      previousPage.push("view-2");
-      break;
+    ViewTwo.fadeOut(200);
+    previousPage.push("view-2");
+    break;
     case 3:
-      ViewThree.fadeOut(200);
-      previousPage.push("view-3");
-      break;
+    ViewThree.fadeOut(200);
+    previousPage.push("view-3");
+    break;
     case 4:
-      ViewFour.fadeOut(200);
-      previousPage.push("view-4");
-      break;
+    ViewFour.fadeOut(200);
+    previousPage.push("view-4");
+    break;
   }
   //console.log(previousPage);
 
   switch(nextView) {
     case 2:
-      ViewTwo.fadeIn();
-      footer.html(viewTwoFooter);
-      break;
+    ViewTwo.fadeIn();
+    footer.html(viewTwoFooter);
+    break;
     case 3:
-      ViewThree.fadeIn();
-      footer.html(viewThreeFooter);
-      break;
+    ViewThree.fadeIn();
+    footer.html(viewThreeFooter);
+    break;
     case 4:
-      ViewFour.fadeIn();
-      footer.html(viewFourFooter);
-      break;
+    ViewFour.fadeIn();
+    footer.html(viewFourFooter);
+    break;
     case 5:
-      ViewFive.fadeIn();
-      footer.html(viewFiveFooter);
-      break;
+    ViewFive.fadeIn();
+    footer.html(viewFiveFooter);
+    break;
   }
 }
 
 $('.back-icon').click(function() {
+  $('#footer').removeClass('footer-view-6');
   var previuos = previousPage.pop();
   //console.log(previousPage);
 
   switch(previuos) {
     case "view-1":
-      ViewTwo.fadeOut(200);
-      ViewThree.fadeOut(200);
-      ViewOne.fadeIn();
-      footer.html(viewOneFooter);
-      break;
+    ViewTwo.fadeOut(200);
+    ViewThree.fadeOut(200);
+    ViewOne.fadeIn();
+    footer.html(viewOneFooter);
+    break;
     case "view-2":
-      ViewThree.fadeOut(200);
-      ViewTwo.fadeIn();
-      footer.html(viewTwoFooter);
-      break;
+    ViewThree.fadeOut(200);
+    ViewTwo.fadeIn();
+    footer.html(viewTwoFooter);
+    break;
     case "view-3":
-      ViewFour.fadeOut(200);
-      ViewThree.fadeIn();
-      footer.html(viewThreeFooter);
-      break;
+    ViewFour.fadeOut(200);
+    ViewThree.fadeIn();
+    footer.html(viewThreeFooter);
+    break;
     case "view-4":
-      ViewFive.fadeOut(200);
-      ViewFour.fadeIn();
-      footer.html(viewFourFooter);
-      break;
+    ViewFive.fadeOut(200);
+    ViewFour.fadeIn();
+    footer.html(viewFourFooter);
+    break;
     case "view-5-section-1":
-      ViewSix.fadeOut(200);
-      ViewFive.fadeIn();
-      viewFiveSectionTwo.fadeOut(200);
-      viewFiveSectionOne.fadeIn();
-      footer.html(viewFiveFooter);
-      break;
+    ViewSix.fadeOut(200);
+    ViewFive.fadeIn();
+    viewFiveSectionTwo.fadeOut(200);
+    viewFiveSectionOne.fadeIn();
+    footer.html(viewFiveFooter);
+    break;
     case "view-5-section-2":
-      ViewSix.fadeOut(200);
-      ViewFive.fadeIn();
-      viewFiveSectionOne.fadeOut(200);
-      viewFiveSectionTwo.fadeIn();
-      footer.html(viewFiveSectionTwoFooter);
-      break;
+    ViewSix.fadeOut(200);
+    ViewFive.fadeIn();
+    viewFiveSectionOne.fadeOut(200);
+    viewFiveSectionTwo.fadeIn();
+    footer.html(viewFiveSectionTwoFooter);
+    break;
   }
 });
 
@@ -507,19 +509,157 @@ $('.btn-view-five-back').click(function() {
   viewFiveSectionTwo.fadeOut(200);
   footer.html(viewFiveFooter);
   previousPage.pop();
-  console.log(previousPage);
+  //console.log(previousPage);
 });
 
 $('.btn-view-five-next-1').click(function() {
+  $('#footer').addClass('footer-view-6');
   previousPage.push("view-5-section-1");
+  footer.html(viewSixFooter);
   ViewFive.fadeOut(200);
   ViewSix.fadeIn();
+  firstInitViewSix();
+  firstAnimationView6();
 });
 $('.btn-view-five-next-2').click(function() {
+  $('#footer').addClass('footer-view-6');
   previousPage.push("view-5-section-2");
+  footer.html(viewSixFooter);
   ViewFive.fadeOut(200);
   ViewSix.fadeIn();
+  firstInitViewSix();
+  firstAnimationView6();
 });
+
+//------------------------------------------------------------------------------
+// View 6
+//------------------------------------------------------------------------------
+
+var parallaxBackground = $('#parallax-background');
+var ageAnimation = $('#span-year-old');
+var ageBarWapper = $('#div-age-bar-wrapper');
+var firstYearOld = $('.span-first-year-old');
+var secondYearOld = $('.span-second-year-old');
+var threeYearOld = $('.span-3rd-year-old');
+var fourYearOld = $('.span-4th-year-old');
+var walkWrapper = $('.walker-wrapper');
+var walkPaper1 = $('#walker-background-1');
+var walkPaper2 = $('#walker-background-2');
+var walkPaper3 = $('#walker-background-3');
+var walkPaper4 = $('#walker-background-4');
+var popupFirst = $('.div-popup-first');
+
+function firstInitViewSix() {
+  firstYearOld.html(age);
+  secondYearOld.html(age + 5);
+  threeYearOld.html(age + 5 + 1);
+  if (gender == 0) {
+    walkPaper1.addClass('female-walker-1');
+    walkPaper2.addClass('female-walker-2');
+    walkPaper3.addClass('female-walker-3');
+    walkPaper4.addClass('female-walker-4');
+  } else {
+    walkPaper1.addClass('male-walker-1');
+    walkPaper2.addClass('male-walker-2');
+    walkPaper3.addClass('male-walker-3');
+    walkPaper4.addClass('male-walker-4');
+  }
+
+  ageAnimation.html(age);
+  $('#span-money').html("S$" + Number(covered * 1000).toLocaleString('en'));
+}
+
+function firstAnimationView6() {
+  parallaxBackground.addClass('first');
+  secondYearOld.addClass('active');
+  walkWrapper.addClass('active');
+  ageBarWapper.addClass('first');
+
+  var currentAge = age;
+  var ageInterval = setInterval(function(){
+    currentAge += 1;
+    ageAnimation.html(currentAge);
+  }, 800);
+
+  setTimeout(function() {
+    // show popup
+    popupFirst.removeClass('hidden');
+    // clear animtion
+    clearInterval(ageInterval);
+    walkWrapper.removeClass('active');
+    parallaxBackground.removeClass('first');
+  }, 4000);
+}
+
+
+
+
+$('.popup-first-close-button').click(function() {
+  $(this).parent().fadeOut(100);
+
+  secondInitView6();
+  setTimeout(function() {
+    $('#span-money').html("S$0");
+    $('.p-power-reset-message').removeClass('hidden');
+    $('.p-claimed-for-major').html('CLAIN AMOUNT');
+    $('.p-stage-critical-illness').html('RECEIVED S$' + Number(covered * 1000).toLocaleString('en'));
+  }, 2000);
+  setTimeout(function() {
+    $('.p-claimed-for-major').html('CLAIMED FOR MAJOR').fadeOut(200);
+    $('.p-stage-critical-illness').html('STAGE CRITICAL ILLNESS').fadeOut(200);
+    secondAnimationView6();
+  }, 4000);
+});
+
+function secondInitView6() {
+  $('.rain-cloud-wrapper').removeClass('hidden');
+  $('.p-claimed-for-major').removeClass('hidden');
+  $('.p-stage-critical-illness').removeClass('hidden');
+
+  if (gender == 0) {
+    walkPaper1.removeClass('female-walker-1').addClass('female-walker-unhappy-1');
+    walkPaper2.removeClass('female-walker-2').addClass('female-walker-unhappy-2');
+    walkPaper3.removeClass('female-walker-3').addClass('female-walker-unhappy-3');
+    walkPaper4.removeClass('female-walker-4').addClass('female-walker-unhappy-4');
+  } else {
+    walkPaper1.removeClass('male-walker-1').addClass('male-walker-unhappy-1');
+    walkPaper2.removeClass('male-walker-2').addClass('male-walker-unhappy-2');
+    walkPaper3.removeClass('male-walker-3').addClass('male-walker-unhappy-3');
+    walkPaper4.removeClass('male-walker-4').addClass('male-walker-unhappy-4');
+  }
+
+}
+
+function secondAnimationView6() {
+  parallaxBackground.addClass('second');
+  ageBarWapper.addClass('second');
+  threeYearOld.addClass('active');
+  walkWrapper.addClass('active');
+  $('.rain-cloud-wrapper').fadeOut(4000);
+
+  var month = 12;
+  var monthInterval = setInterval(function(){
+    month -= 1;
+    if (month == 1) {
+      $('#p-power-set-month').html("1 MONTHS");
+    } else {
+      $('#p-power-set-month').html(month + " MONTHS");
+    }
+  }, 333);
+
+  setTimeout(function() {
+    walkWrapper.removeClass('active');
+    clearInterval(monthInterval);
+  }, 4000);
+};
+
+
+
+
+
+
+
+
 
 
 

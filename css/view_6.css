@@ -1,12 +1,19 @@
+footer.footer-view-6 {
+  background-color: #757574;
+  text-align: center;
+  padding: 8px;
+  color: #acacab;
+}
+
 
 /* For background */
 @-webkit-keyframes animatedBackground {
   0% { transform: translateX(0) }
-  100% { transform: translateX(-903px) }
+  100% { transform: translateX(-1034px) } /* x0.52 width*/
 }
 @keyframes animatedBackground {
   0% { transform: translateX(0) }
-  100% { transform: translateX(-903px) }
+  100% { transform: translateX(-1034px) }
 }
 #parallax-wrapper {
   position: absolute;
@@ -14,19 +21,34 @@
   left: 0;
   width: 100%;
   height: 100%;
-  margin-top: 65px;
+  margin-top: 75px;
   overflow: hidden;
 }
 #parallax-background {
-  position: relative;
-  width: 3612px;
+  width: 4136px; /* x2 width*/
   height: 100%;
-  background: url(../images/view-6-background.png) repeat 0 0;
-  -webkit-animation: animatedBackground 10s linear infinite;
-  animation: animatedBackground 10s linear infinite;
+  position: relative;
+  background: url(../images/view-6-background.jpg) repeat 0 0;
+}
+#parallax-background.first {
+  -webkit-animation: animatedBackground 4s linear;
+  animation: animatedBackground 4s linear;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
+#parallax-background.second {
+  -webkit-animation: animatedBackground 4s linear;
+  animation: animatedBackground 4s linear;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+#parallax-background.three {
+  -webkit-animation: animatedBackground 4s linear;
+  animation: animatedBackground 4s linear;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
 
 /* For Walker */
 @keyframes animatedWalkerUnhappyOne {
@@ -91,11 +113,63 @@
 #walker-background-1, #walker-background-2, #walker-background-3, #walker-background-4 {
   width: 230px;
   height: 230px;
-  bottom: 22px;
+  bottom: 29px;
   left: 50px;
   position: absolute;
 }
-#walker-background-1 {
+.female-walker-1 {
+  background: url(../images/Female_walk_1.png) repeat 0 0;
+  background-size: contain;
+}
+.walker-wrapper.active .female-walker-1 {
+  opacity: 1;
+  background: url(../images/Female_walk_1.png) repeat 0 0;
+  background-size: contain;
+  -webkit-animation: animatedWalkerUnhappyOne 0.7s linear infinite;
+  -moz-animation: animatedWalkerUnhappyOne 0.7s linear infinite;
+  -o-animation: animatedWalkerUnhappyOne 0.7s linear infinite;
+  animation: animatedWalkerUnhappyOne 0.7s linear infinite;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.walker-wrapper.active .female-walker-2 {
+  opacity: 0;
+  background: url(../images/Female_walk_2.png) repeat 0 0;
+  background-size: contain;
+  -webkit-animation: animatedWalkerUnhappyTwo 0.7s linear infinite;
+  -moz-animation: animatedWalkerUnhappyTwo 0.7s linear infinite;
+  -o-animation: animatedWalkerUnhappyTwo 0.7s linear infinite;
+  animation: animatedWalkerUnhappyTwo 0.7s linear infinite;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.walker-wrapper.active .female-walker-3 {
+  opacity: 0;
+  background: url(../images/Female_walk_3.png) repeat 0 0;
+  background-size: contain;
+  -webkit-animation: animatedWalkerUnhappyThree 0.7s linear infinite;
+  -moz-animation: animatedWalkerUnhappyThree 0.7s linear infinite;
+  -o-animation: animatedWalkerUnhappyThree 0.7s linear infinite;
+  animation: animatedWalkerUnhappyThree 0.7s linear infinite;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.walker-wrapper.active .female-walker-4 {
+  opacity: 0;
+  background: url(../images/Female_walk_4.png) repeat 0 0;
+  background-size: contain;
+  -webkit-animation: animatedWalkerUnhappyFour 0.7s linear infinite;
+  -moz-animation: animatedWalkerUnhappyFour 0.7s linear infinite;
+  -o-animation: animatedWalkerUnhappyFour 0.7s linear infinite;
+  animation: animatedWalkerUnhappyFour 0.7s linear infinite;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.female-walker-unhappy-1 {
+  background: url(../images/Female_walker_unhappy_1.png) repeat 0 0;
+  background-size: contain;
+}
+.walker-wrapper.active .female-walker-unhappy-1 {
   opacity: 1;
   background: url(../images/Female_walker_unhappy_1.png) repeat 0 0;
   background-size: contain;
@@ -103,11 +177,10 @@
   -moz-animation: animatedWalkerUnhappyOne 0.7s linear infinite;
   -o-animation: animatedWalkerUnhappyOne 0.7s linear infinite;
   animation: animatedWalkerUnhappyOne 0.7s linear infinite;
-
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
-#walker-background-2 {
+.walker-wrapper.active .female-walker-unhappy-2 {
   opacity: 0;
   background: url(../images/Female_walker_unhappy_2.png) repeat 0 0;
   background-size: contain;
@@ -115,11 +188,10 @@
   -moz-animation: animatedWalkerUnhappyTwo 0.7s linear infinite;
   -o-animation: animatedWalkerUnhappyTwo 0.7s linear infinite;
   animation: animatedWalkerUnhappyTwo 0.7s linear infinite;
-
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
-#walker-background-3 {
+.walker-wrapper.active .female-walker-unhappy-3 {
   opacity: 0;
   background: url(../images/Female_walker_unhappy_3.png) repeat 0 0;
   background-size: contain;
@@ -127,13 +199,108 @@
   -moz-animation: animatedWalkerUnhappyThree 0.7s linear infinite;
   -o-animation: animatedWalkerUnhappyThree 0.7s linear infinite;
   animation: animatedWalkerUnhappyThree 0.7s linear infinite;
-
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
-#walker-background-4 {
+.walker-wrapper.active .female-walker-unhappy-4 {
   opacity: 0;
   background: url(../images/Female_walker_unhappy_4.png) repeat 0 0;
+  background-size: contain;
+  -webkit-animation: animatedWalkerUnhappyFour 0.7s linear infinite;
+  -moz-animation: animatedWalkerUnhappyFour 0.7s linear infinite;
+  -o-animation: animatedWalkerUnhappyFour 0.7s linear infinite;
+  animation: animatedWalkerUnhappyFour 0.7s linear infinite;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.male-walker-1 {
+  background: url(../images/Male_walk_1.png) repeat 0 0;
+  background-size: contain;
+}
+.walker-wrapper.active .male-walker-1 {
+  opacity: 1;
+  background: url(../images/Male_walk_1.png) repeat 0 0;
+  background-size: contain;
+  -webkit-animation: animatedWalkerUnhappyOne 0.7s linear infinite;
+  -moz-animation: animatedWalkerUnhappyOne 0.7s linear infinite;
+  -o-animation: animatedWalkerUnhappyOne 0.7s linear infinite;
+  animation: animatedWalkerUnhappyOne 0.7s linear infinite;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.walker-wrapper.active .male-walker-2 {
+  opacity: 0;
+  background: url(../images/Male_walk_2.png) repeat 0 0;
+  background-size: contain;
+  -webkit-animation: animatedWalkerUnhappyTwo 0.7s linear infinite;
+  -moz-animation: animatedWalkerUnhappyTwo 0.7s linear infinite;
+  -o-animation: animatedWalkerUnhappyTwo 0.7s linear infinite;
+  animation: animatedWalkerUnhappyTwo 0.7s linear infinite;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.walker-wrapper.active .male-walker-3 {
+  opacity: 0;
+  background: url(../images/Male_walk_3.png) repeat 0 0;
+  background-size: contain;
+  -webkit-animation: animatedWalkerUnhappyThree 0.7s linear infinite;
+  -moz-animation: animatedWalkerUnhappyThree 0.7s linear infinite;
+  -o-animation: animatedWalkerUnhappyThree 0.7s linear infinite;
+  animation: animatedWalkerUnhappyThree 0.7s linear infinite;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.walker-wrapper.active .male-walker-4 {
+  opacity: 0;
+  background: url(../images/Male_walk_4.png) repeat 0 0;
+  background-size: contain;
+  -webkit-animation: animatedWalkerUnhappyFour 0.7s linear infinite;
+  -moz-animation: animatedWalkerUnhappyFour 0.7s linear infinite;
+  -o-animation: animatedWalkerUnhappyFour 0.7s linear infinite;
+  animation: animatedWalkerUnhappyFour 0.7s linear infinite;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.male-walker-unhappy-1 {
+  background: url(../images/Male_walk_unhappy_1.png) repeat 0 0;
+  background-size: contain;
+}
+.walker-wrapper.active .male-walker-unhappy-1 {
+  opacity: 1;
+  background: url(../images/Male_walk_unhappy_1.png) repeat 0 0;
+  background-size: contain;
+  -webkit-animation: animatedWalkerUnhappyOne 0.7s linear infinite;
+  -moz-animation: animatedWalkerUnhappyOne 0.7s linear infinite;
+  -o-animation: animatedWalkerUnhappyOne 0.7s linear infinite;
+  animation: animatedWalkerUnhappyOne 0.7s linear infinite;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.walker-wrapper.active .male-walker-unhappy-2 {
+  opacity: 0;
+  background: url(../images/Male_walk_unhappy_2.png) repeat 0 0;
+  background-size: contain;
+  -webkit-animation: animatedWalkerUnhappyTwo 0.7s linear infinite;
+  -moz-animation: animatedWalkerUnhappyTwo 0.7s linear infinite;
+  -o-animation: animatedWalkerUnhappyTwo 0.7s linear infinite;
+  animation: animatedWalkerUnhappyTwo 0.7s linear infinite;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.walker-wrapper.active .male-walker-unhappy-3 {
+  opacity: 0;
+  background: url(../images/Male_walk_unhappy_3.png) repeat 0 0;
+  background-size: contain;
+  -webkit-animation: animatedWalkerUnhappyThree 0.7s linear infinite;
+  -moz-animation: animatedWalkerUnhappyThree 0.7s linear infinite;
+  -o-animation: animatedWalkerUnhappyThree 0.7s linear infinite;
+  animation: animatedWalkerUnhappyThree 0.7s linear infinite;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.walker-wrapper.active .male-walker-unhappy-4 {
+  opacity: 0;
+  background: url(../images/Male_walk_unhappy_4.png) repeat 0 0;
   background-size: contain;
   -webkit-animation: animatedWalkerUnhappyFour 0.7s linear infinite;
   -moz-animation: animatedWalkerUnhappyFour 0.7s linear infinite;
@@ -145,6 +312,9 @@
 
 
 /* rain cloud */
+// .rain-cloud-wrapper {
+//   transition: all 4s ease-in-out;
+// }
 #rain-cloud-background-1 {
   opacity: 1;
   display: none;
@@ -213,15 +383,8 @@
   position: absolute;
 }
 
-/* Top bar right */
-#div-age-bar-wrapper {
-  top: 65px;
-  left: 505px;
-  width: 552px;
-  height: 115px;
-  overflow: hidden;
-  position: absolute;
-}
+
+/* Top bar on the right */
 #div-age-bar-background {
   width: 485px;
   height: 125px;
@@ -241,18 +404,59 @@
   background-size: contain;
   background-repeat: no-repeat;
 }
+.span-second-year-old.active, .span-3rd-year-old.active, .span-4th-year-old.active {
+  -ms-transform: scale(1, 1);
+  -webkit-transform: scale(1, 1);
+  transform: scale(1, 1);
+}
+.span-second-year-old {
+  -ms-transform: scale(0.5, 0.5);
+  -webkit-transform: scale(0.5, 0.5);
+  transform: scale(0.5, 0.5);
+  transition: all 4s ease-in-out;
+}
+.span-3rd-year-old {
+  -ms-transform: scale(0.5, 0.5);
+  -webkit-transform: scale(0.5, 0.5);
+  transform: scale(0.5, 0.5);
+  transition: all 4s ease-in-out;
+}
+.span-4th-year-old {
+  -ms-transform: scale(0.5, 0.5);
+  -webkit-transform: scale(0.5, 0.5);
+  transform: scale(0.5, 0.5);
+  transition: all 4s ease-in-out;
+}
+#div-age-bar-wrapper {
+  top: 65px;
+  left: 505px;
+  width: 54px;
+  height: 115px;
+  overflow: hidden;
+  position: absolute;
+  transition: all 4s ease-in-out;
+}
+#div-age-bar-wrapper.first {
+  width: 201px;
+}
+#div-age-bar-wrapper.second {
+  width: 274px;
+}
+#div-age-bar-wrapper.three {
+ width: 486px;
+}
+
 
 /* Messages on the left */
 #div-message {
   position: relative;
   font-weight: 500;
-  font-size: 2.2rem;
+  font-size: 4rem;
   margin-left: 35px;
   margin-top: 25px;
 }
 .p-sum-assured {
-  font-size: 1.9rem;
-  margin-top: -10px;
+  font-size: 3.2rem;
 }
 #span-year-old {
   color: #D31145;
@@ -264,28 +468,60 @@
   color: #D31145;
 }
 #span-first-year-old {
-  left: 517px;
+  left: 516px;
 }
 #span-second-year-old {
-  left: 666px;
+  left: 665px;
 }
 #span-3rd-year-old {
-  left: 741px;
+  left: 740px;
 }
 #span-4th-year-old {
-  left: 949px;
+  left: 948px;
 }
 .span-number {
   color: #ffffff;
   position: absolute;
   font-weight: 400;
-  font-size: 2.2rem;
-  top: 100px;
+  font-size: 3.7rem;
+  top: 103px;
   cursor: pointer;
 }
 .p-claimed-for-major {
   margin-top: 50px;
 }
 .p-stage-critical-illness{
-  margin-top: -6px;
+  margin-top: 5px;
 }
+.p-power-reset-message {
+  margin-top: 10px;
+}
+
+
+/* Popups */
+.div-popup-first {
+  top: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-in-out;
+}
+.div-popup-first img {
+  height: 100%;
+  width: 100%;
+}
+.div-popup-first .fake-button-close {
+  width: 243px;
+  height: 50px;
+  cursor: pointer;
+  position: absolute;
+  z-index: 9;
+  bottom: 105px;
+  left: 390px;
+}
+
+
+
+
+
+

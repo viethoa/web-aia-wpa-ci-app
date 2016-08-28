@@ -49,7 +49,7 @@ footer {
   width: 100%;
   position: fixed;
   text-align: left;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   padding: 16px 22px;
   font-family: serif;
   background-color: #DDDDDD;
@@ -67,6 +67,9 @@ paper-button {
   box-shadow:rgba(0, 0, 0, 0.2) 0 5px 5px 0;
   -webkit-box-shadow:rgba(0, 0, 0, 0.2) 0 5px 5px 0;
   -moz-box-shadow:rgba(0, 0, 0, 0.2) 0 5px 5px 0;
+}
+.hidden {
+  display: none;
 }
 
 .view-1, .view-2, .view-3 {
