@@ -536,6 +536,7 @@ $('.btn-view-five-next-2').click(function() {
 //------------------------------------------------------------------------------
 
 var parallaxBackground = $('#parallax-background');
+var rainningWrapper = $('.rain-cloud-wrapper');
 var ageAnimation = $('#span-year-old');
 var ageBarWapper = $('#div-age-bar-wrapper');
 var firstYearOld = $('.span-first-year-old');
@@ -548,6 +549,12 @@ var walkPaper2 = $('#walker-background-2');
 var walkPaper3 = $('#walker-background-3');
 var walkPaper4 = $('#walker-background-4');
 var popupFirst = $('.div-popup-first');
+var popupSecond = $('.div-popup-second');
+var popupThree = $('.div-popup-three');
+
+var firstAnimationTime = 4000;
+var secondAnimationTime = 8000;
+var threeAnimationTime = 4000;
 
 function firstInitViewSix() {
   firstYearOld.html(age);
@@ -579,42 +586,47 @@ function firstAnimationView6() {
   var ageInterval = setInterval(function(){
     currentAge += 1;
     ageAnimation.html(currentAge);
-  }, 800);
+  }, firstAnimationTime / 5);
 
   setTimeout(function() {
     // show popup
-    popupFirst.removeClass('hidden');
+    popupFirst.fadeIn(300);
     // clear animtion
     clearInterval(ageInterval);
     walkWrapper.removeClass('active');
     parallaxBackground.removeClass('first');
-  }, 4000);
+  }, firstAnimationTime);
 }
 
 
-
+//---Animation second after button close click-----------------------------------
 
 $('.popup-first-close-button').click(function() {
-  $(this).parent().fadeOut(100);
+  $(this).parent().fadeOut(300);
 
   secondInitView6();
   setTimeout(function() {
     $('#span-money').html("S$0");
-    $('.p-power-reset-message').removeClass('hidden');
+    $('.p-power-reset-message').fadeIn(300);
     $('.p-claimed-for-major').html('CLAIN AMOUNT');
     $('.p-stage-critical-illness').html('RECEIVED S$' + Number(covered * 1000).toLocaleString('en'));
   }, 2000);
   setTimeout(function() {
-    $('.p-claimed-for-major').html('CLAIMED FOR MAJOR').fadeOut(200);
-    $('.p-stage-critical-illness').html('STAGE CRITICAL ILLNESS').fadeOut(200);
+    $('.p-claimed-for-major').fadeOut(function() {
+      $(this).html('CLAIMED FOR MAJOR');
+    })
+    $('.p-stage-critical-illness').fadeOut(function() {
+      $(this).html('STAGE CRITICAL ILLNESS');
+    });
+
     secondAnimationView6();
   }, 4000);
 });
 
 function secondInitView6() {
-  $('.rain-cloud-wrapper').removeClass('hidden');
-  $('.p-claimed-for-major').removeClass('hidden');
-  $('.p-stage-critical-illness').removeClass('hidden');
+  rainningWrapper.addClass('appear');
+  $('.p-claimed-for-major').fadeIn(300);
+  $('.p-stage-critical-illness').fadeIn(300);
 
   if (gender == 0) {
     walkPaper1.removeClass('female-walker-1').addClass('female-walker-unhappy-1');
@@ -627,35 +639,118 @@ function secondInitView6() {
     walkPaper3.removeClass('male-walker-3').addClass('male-walker-unhappy-3');
     walkPaper4.removeClass('male-walker-4').addClass('male-walker-unhappy-4');
   }
-
 }
 
 function secondAnimationView6() {
-  parallaxBackground.addClass('second');
+  walkWrapper.addClass('active');
   ageBarWapper.addClass('second');
   threeYearOld.addClass('active');
-  walkWrapper.addClass('active');
-  $('.rain-cloud-wrapper').fadeOut(4000);
+  parallaxBackground.addClass('second');
+  rainningWrapper.addClass('hidding');
 
   var month = 12;
   var monthInterval = setInterval(function(){
     month -= 1;
     if (month == 1) {
-      $('#p-power-set-month').html("1 MONTHS");
-    } else {
+      $('#p-power-set-month').html(month + " MONTH");
+    } else if (month > 1) {
       $('#p-power-set-month').html(month + " MONTHS");
     }
-  }, 333);
+  }, secondAnimationTime / 12);
 
   setTimeout(function() {
     walkWrapper.removeClass('active');
     clearInterval(monthInterval);
-  }, 4000);
+
+    popupSecond.fadeIn(300);
+    ageAnimation.html(age + 6);
+    parallaxBackground.removeClass('second');
+    $('.p-power-reset-message').fadeOut(300);
+    $('#span-money').html("S$" + Number(covered * 1000).toLocaleString('en'));
+    $('.span-covered-for-popup').html("S$" + Number(covered * 1000).toLocaleString('en'));
+
+    threeInitView6();
+  }, secondAnimationTime);
 };
 
+function threeInitView6() {
+  if (gender == 0) {
+    $('.div-person-for-popup').addClass('female');
+    walkPaper1.removeClass('female-walker-unhappy-1').addClass('female-walker-1');
+    walkPaper2.removeClass('female-walker-unhappy-2').addClass('female-walker-2');
+    walkPaper3.removeClass('female-walker-unhappy-3').addClass('female-walker-3');
+    walkPaper4.removeClass('female-walker-unhappy-4').addClass('female-walker-4');
+  } else {
+    $('.div-person-for-popup').addClass('male');
+    walkPaper1.removeClass('male-walker-unhappy-1').addClass('male-walker-1');
+    walkPaper2.removeClass('male-walker-unhappy-2').addClass('male-walker-2');
+    walkPaper3.removeClass('male-walker-unhappy-3').addClass('male-walker-3');
+    walkPaper4.removeClass('male-walker-unhappy-4').addClass('male-walker-4');
+  }
+}
 
 
+//---Animation three after button close click-----------------------------------
 
+$('.popup-second-close-button').click(function() {
+  $(this).parent().fadeOut(300);
+  threeAnimationView6();
+});
+
+function threeAnimationView6() {
+  setTimeout(function() {
+    fourYearOld.addClass('active');
+    walkWrapper.addClass('active');
+    ageBarWapper.addClass('three');
+    parallaxBackground.addClass('three');
+  }, 200);
+
+  var currentAge = age + 6;
+  var ageInterval = setInterval(function(){
+    currentAge += 1;
+    if (currentAge <= 75) {
+      ageAnimation.html(currentAge);
+    }
+  }, threeAnimationTime / (75 - (age + 6)));
+
+  setTimeout(function() {
+    parallaxBackground.removeClass('three');
+    walkWrapper.removeClass('active');
+    clearInterval(ageInterval);
+    popupThree.fadeIn(300);
+    ageAnimation.html(75);
+  }, threeAnimationTime + 200);
+}
+
+
+//---Replay animation-----------------------------------------------------------
+
+$('.popup-three-replay-button').click(function() {
+  $(this).parent().fadeOut(300);
+  resetView6();
+});
+
+function resetView6() {
+  ageAnimation.html(age);
+  secondYearOld.removeClass('active');
+  threeYearOld.removeClass('active');
+  fourYearOld.removeClass('active');
+  rainningWrapper.removeClass('appear').removeClass('hidding');
+  ageBarWapper.removeClass('first').removeClass('second').removeClass('three');
+  $('#p-power-set-month').html("12 MONTHS");
+  firstInitViewSix();
+
+  setTimeout(function() {
+    firstAnimationView6();
+  }, 300);
+}
+
+
+//---Review animation-----------------------------------------------------------
+
+$('.popup-three-review-button').click(function() {
+
+});
 
 
 

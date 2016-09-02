@@ -8,11 +8,11 @@ footer.footer-view-6 {
 
 /* For background */
 @-webkit-keyframes animatedBackground {
-  0% { transform: translateX(0) }
-  100% { transform: translateX(-1034px) } /* x0.52 width*/
+  0% { transform: translateX(-517) }
+  100% { transform: translateX(-1034px) } /* x0.5 width*/
 }
 @keyframes animatedBackground {
-  0% { transform: translateX(0) }
+  0% { transform: translateX(-517) }
   100% { transform: translateX(-1034px) }
 }
 #parallax-wrapper {
@@ -28,6 +28,7 @@ footer.footer-view-6 {
   width: 4136px; /* x2 width*/
   height: 100%;
   position: relative;
+  transform: translateX(-517);
   background: url(../images/view-6-background.jpg) repeat 0 0;
 }
 #parallax-background.first {
@@ -37,8 +38,8 @@ footer.footer-view-6 {
   transform: translate3d(0, 0, 0);
 }
 #parallax-background.second {
-  -webkit-animation: animatedBackground 4s linear;
-  animation: animatedBackground 4s linear;
+  -webkit-animation: animatedBackground 8s linear;
+  animation: animatedBackground 8s linear;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
@@ -47,6 +48,71 @@ footer.footer-view-6 {
   animation: animatedBackground 4s linear;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
+}
+
+
+/* Top bar on the right */
+#div-age-bar-background {
+  width: 485px;
+  height: 125px;
+  background: url('../images/view-6-age-bar.png');
+  position: relative;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-top: 10px;
+}
+#div-age-bar-empty {
+  top: 63px;
+  left: 504px;
+  width: 553px;
+  height: 125px;
+  position: absolute;
+  background: url('../images/view-6-age-bar-empty.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.span-second-year-old.active, .span-3rd-year-old.active, .span-4th-year-old.active {
+  -ms-transform: scale(1, 1);
+  -webkit-transform: scale(1, 1);
+  transform: scale(1, 1);
+}
+.span-second-year-old {
+  -ms-transform: scale(0.5, 0.5);
+  -webkit-transform: scale(0.5, 0.5);
+  transform: scale(0.5, 0.5);
+  transition: all 4s ease-in-out;
+}
+.span-3rd-year-old {
+  -ms-transform: scale(0.5, 0.5);
+  -webkit-transform: scale(0.5, 0.5);
+  transform: scale(0.5, 0.5);
+  transition: all 8s ease-in-out;
+}
+.span-4th-year-old {
+  -ms-transform: scale(0.5, 0.5);
+  -webkit-transform: scale(0.5, 0.5);
+  transform: scale(0.5, 0.5);
+  transition: all 4s ease-in-out;
+}
+#div-age-bar-wrapper {
+  top: 65px;
+  left: 505px;
+  width: 54px;
+  height: 115px;
+  overflow: hidden;
+  position: absolute;
+}
+#div-age-bar-wrapper.first {
+  width: 201px;
+  transition: width 4s ease-in-out;
+}
+#div-age-bar-wrapper.second {
+  width: 274px;
+  transition: width 8s ease-in-out;
+}
+#div-age-bar-wrapper.three {
+ width: 486px;
+ transition: width 4s ease-in-out;
 }
 
 
@@ -126,8 +192,6 @@ footer.footer-view-6 {
   background: url(../images/Female_walk_1.png) repeat 0 0;
   background-size: contain;
   -webkit-animation: animatedWalkerUnhappyOne 0.7s linear infinite;
-  -moz-animation: animatedWalkerUnhappyOne 0.7s linear infinite;
-  -o-animation: animatedWalkerUnhappyOne 0.7s linear infinite;
   animation: animatedWalkerUnhappyOne 0.7s linear infinite;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
@@ -137,8 +201,6 @@ footer.footer-view-6 {
   background: url(../images/Female_walk_2.png) repeat 0 0;
   background-size: contain;
   -webkit-animation: animatedWalkerUnhappyTwo 0.7s linear infinite;
-  -moz-animation: animatedWalkerUnhappyTwo 0.7s linear infinite;
-  -o-animation: animatedWalkerUnhappyTwo 0.7s linear infinite;
   animation: animatedWalkerUnhappyTwo 0.7s linear infinite;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
@@ -148,8 +210,6 @@ footer.footer-view-6 {
   background: url(../images/Female_walk_3.png) repeat 0 0;
   background-size: contain;
   -webkit-animation: animatedWalkerUnhappyThree 0.7s linear infinite;
-  -moz-animation: animatedWalkerUnhappyThree 0.7s linear infinite;
-  -o-animation: animatedWalkerUnhappyThree 0.7s linear infinite;
   animation: animatedWalkerUnhappyThree 0.7s linear infinite;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
@@ -159,8 +219,6 @@ footer.footer-view-6 {
   background: url(../images/Female_walk_4.png) repeat 0 0;
   background-size: contain;
   -webkit-animation: animatedWalkerUnhappyFour 0.7s linear infinite;
-  -moz-animation: animatedWalkerUnhappyFour 0.7s linear infinite;
-  -o-animation: animatedWalkerUnhappyFour 0.7s linear infinite;
   animation: animatedWalkerUnhappyFour 0.7s linear infinite;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
@@ -174,8 +232,6 @@ footer.footer-view-6 {
   background: url(../images/Female_walker_unhappy_1.png) repeat 0 0;
   background-size: contain;
   -webkit-animation: animatedWalkerUnhappyOne 0.7s linear infinite;
-  -moz-animation: animatedWalkerUnhappyOne 0.7s linear infinite;
-  -o-animation: animatedWalkerUnhappyOne 0.7s linear infinite;
   animation: animatedWalkerUnhappyOne 0.7s linear infinite;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
@@ -185,8 +241,6 @@ footer.footer-view-6 {
   background: url(../images/Female_walker_unhappy_2.png) repeat 0 0;
   background-size: contain;
   -webkit-animation: animatedWalkerUnhappyTwo 0.7s linear infinite;
-  -moz-animation: animatedWalkerUnhappyTwo 0.7s linear infinite;
-  -o-animation: animatedWalkerUnhappyTwo 0.7s linear infinite;
   animation: animatedWalkerUnhappyTwo 0.7s linear infinite;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
@@ -196,8 +250,6 @@ footer.footer-view-6 {
   background: url(../images/Female_walker_unhappy_3.png) repeat 0 0;
   background-size: contain;
   -webkit-animation: animatedWalkerUnhappyThree 0.7s linear infinite;
-  -moz-animation: animatedWalkerUnhappyThree 0.7s linear infinite;
-  -o-animation: animatedWalkerUnhappyThree 0.7s linear infinite;
   animation: animatedWalkerUnhappyThree 0.7s linear infinite;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
@@ -207,8 +259,6 @@ footer.footer-view-6 {
   background: url(../images/Female_walker_unhappy_4.png) repeat 0 0;
   background-size: contain;
   -webkit-animation: animatedWalkerUnhappyFour 0.7s linear infinite;
-  -moz-animation: animatedWalkerUnhappyFour 0.7s linear infinite;
-  -o-animation: animatedWalkerUnhappyFour 0.7s linear infinite;
   animation: animatedWalkerUnhappyFour 0.7s linear infinite;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
@@ -222,8 +272,6 @@ footer.footer-view-6 {
   background: url(../images/Male_walk_1.png) repeat 0 0;
   background-size: contain;
   -webkit-animation: animatedWalkerUnhappyOne 0.7s linear infinite;
-  -moz-animation: animatedWalkerUnhappyOne 0.7s linear infinite;
-  -o-animation: animatedWalkerUnhappyOne 0.7s linear infinite;
   animation: animatedWalkerUnhappyOne 0.7s linear infinite;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
@@ -233,8 +281,6 @@ footer.footer-view-6 {
   background: url(../images/Male_walk_2.png) repeat 0 0;
   background-size: contain;
   -webkit-animation: animatedWalkerUnhappyTwo 0.7s linear infinite;
-  -moz-animation: animatedWalkerUnhappyTwo 0.7s linear infinite;
-  -o-animation: animatedWalkerUnhappyTwo 0.7s linear infinite;
   animation: animatedWalkerUnhappyTwo 0.7s linear infinite;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
@@ -244,8 +290,6 @@ footer.footer-view-6 {
   background: url(../images/Male_walk_3.png) repeat 0 0;
   background-size: contain;
   -webkit-animation: animatedWalkerUnhappyThree 0.7s linear infinite;
-  -moz-animation: animatedWalkerUnhappyThree 0.7s linear infinite;
-  -o-animation: animatedWalkerUnhappyThree 0.7s linear infinite;
   animation: animatedWalkerUnhappyThree 0.7s linear infinite;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
@@ -255,8 +299,6 @@ footer.footer-view-6 {
   background: url(../images/Male_walk_4.png) repeat 0 0;
   background-size: contain;
   -webkit-animation: animatedWalkerUnhappyFour 0.7s linear infinite;
-  -moz-animation: animatedWalkerUnhappyFour 0.7s linear infinite;
-  -o-animation: animatedWalkerUnhappyFour 0.7s linear infinite;
   animation: animatedWalkerUnhappyFour 0.7s linear infinite;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
@@ -270,8 +312,6 @@ footer.footer-view-6 {
   background: url(../images/Male_walk_unhappy_1.png) repeat 0 0;
   background-size: contain;
   -webkit-animation: animatedWalkerUnhappyOne 0.7s linear infinite;
-  -moz-animation: animatedWalkerUnhappyOne 0.7s linear infinite;
-  -o-animation: animatedWalkerUnhappyOne 0.7s linear infinite;
   animation: animatedWalkerUnhappyOne 0.7s linear infinite;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
@@ -281,8 +321,6 @@ footer.footer-view-6 {
   background: url(../images/Male_walk_unhappy_2.png) repeat 0 0;
   background-size: contain;
   -webkit-animation: animatedWalkerUnhappyTwo 0.7s linear infinite;
-  -moz-animation: animatedWalkerUnhappyTwo 0.7s linear infinite;
-  -o-animation: animatedWalkerUnhappyTwo 0.7s linear infinite;
   animation: animatedWalkerUnhappyTwo 0.7s linear infinite;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
@@ -292,8 +330,6 @@ footer.footer-view-6 {
   background: url(../images/Male_walk_unhappy_3.png) repeat 0 0;
   background-size: contain;
   -webkit-animation: animatedWalkerUnhappyThree 0.7s linear infinite;
-  -moz-animation: animatedWalkerUnhappyThree 0.7s linear infinite;
-  -o-animation: animatedWalkerUnhappyThree 0.7s linear infinite;
   animation: animatedWalkerUnhappyThree 0.7s linear infinite;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
@@ -303,8 +339,6 @@ footer.footer-view-6 {
   background: url(../images/Male_walk_unhappy_4.png) repeat 0 0;
   background-size: contain;
   -webkit-animation: animatedWalkerUnhappyFour 0.7s linear infinite;
-  -moz-animation: animatedWalkerUnhappyFour 0.7s linear infinite;
-  -o-animation: animatedWalkerUnhappyFour 0.7s linear infinite;
   animation: animatedWalkerUnhappyFour 0.7s linear infinite;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
@@ -312,9 +346,34 @@ footer.footer-view-6 {
 
 
 /* rain cloud */
-// .rain-cloud-wrapper {
-//   transition: all 4s ease-in-out;
-// }
+@keyframes appear {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-webkit-keyframes appear {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+.rain-cloud-wrapper {
+  left: -300px;
+  position: absolute;
+}
+.rain-cloud-wrapper.appear {
+  left: 0px;
+}
+@keyframes hidding {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+@-webkit-keyframes hidding {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+.rain-cloud-wrapper.hidding {
+  opacity: 0;
+  -webkit-animation: hidding 8s linear;
+  animation: hidding 8s linear;
+}
 #rain-cloud-background-1 {
   opacity: 1;
   display: none;
@@ -339,111 +398,40 @@ footer.footer-view-6 {
   background: url(../images/rain_cloud_4.png) repeat 0 0;
   background-size: contain;
 }
-.rain-cloud-wrapper.active #rain-cloud-background-1 {
+.rain-cloud-wrapper #rain-cloud-background-1 {
   display: block;
   -webkit-animation: animatedWalkerUnhappyOne 0.4s linear infinite;
-  -moz-animation: animatedWalkerUnhappyOne 0.4s linear infinite;
-  -o-animation: animatedWalkerUnhappyOne 0.4s linear infinite;
   animation: animatedWalkerUnhappyOne 0.4s linear infinite;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
-.rain-cloud-wrapper.active #rain-cloud-background-2 {
+.rain-cloud-wrapper #rain-cloud-background-2 {
   display: block;
   -webkit-animation: animatedWalkerUnhappyTwo 0.4s linear infinite;
-  -moz-animation: animatedWalkerUnhappyTwo 0.4s linear infinite;
-  -o-animation: animatedWalkerUnhappyTwo 0.4s linear infinite;
   animation: animatedWalkerUnhappyTwo 0.4s linear infinite;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
-.rain-cloud-wrapper.active #rain-cloud-background-3 {
+.rain-cloud-wrapper #rain-cloud-background-3 {
   display: block;
   -webkit-animation: animatedWalkerUnhappyThree 0.4s linear infinite;
-  -moz-animation: animatedWalkerUnhappyThree 0.4s linear infinite;
-  -o-animation: animatedWalkerUnhappyThree 0.4s linear infinite;
   animation: animatedWalkerUnhappyThree 0.4s linear infinite;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
-.rain-cloud-wrapper.active #rain-cloud-background-4 {
+.rain-cloud-wrapper #rain-cloud-background-4 {
   display: block;
   -webkit-animation: animatedWalkerUnhappyFour 0.4s linear infinite;
-  -moz-animation: animatedWalkerUnhappyFour 0.4s linear infinite;
-  -o-animation: animatedWalkerUnhappyFour 0.4s linear infinite;
   animation: animatedWalkerUnhappyFour 0.4s linear infinite;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
 #rain-cloud-background-1, #rain-cloud-background-2, #rain-cloud-background-3, #rain-cloud-background-4 {
+  top: 380px;
   left: 50px;
   width: 230px;
   height: 230px;
-  bottom: 58px;
   position: absolute;
-}
-
-
-/* Top bar on the right */
-#div-age-bar-background {
-  width: 485px;
-  height: 125px;
-  background: url('../images/view-6-age-bar.png');
-  position: relative;
-  background-size: contain;
-  background-repeat: no-repeat;
-  margin-top: 10px;
-}
-#div-age-bar-empty {
-  top: 63px;
-  left: 504px;
-  width: 553px;
-  height: 125px;
-  position: absolute;
-  background: url('../images/view-6-age-bar-empty.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-.span-second-year-old.active, .span-3rd-year-old.active, .span-4th-year-old.active {
-  -ms-transform: scale(1, 1);
-  -webkit-transform: scale(1, 1);
-  transform: scale(1, 1);
-}
-.span-second-year-old {
-  -ms-transform: scale(0.5, 0.5);
-  -webkit-transform: scale(0.5, 0.5);
-  transform: scale(0.5, 0.5);
-  transition: all 4s ease-in-out;
-}
-.span-3rd-year-old {
-  -ms-transform: scale(0.5, 0.5);
-  -webkit-transform: scale(0.5, 0.5);
-  transform: scale(0.5, 0.5);
-  transition: all 4s ease-in-out;
-}
-.span-4th-year-old {
-  -ms-transform: scale(0.5, 0.5);
-  -webkit-transform: scale(0.5, 0.5);
-  transform: scale(0.5, 0.5);
-  transition: all 4s ease-in-out;
-}
-#div-age-bar-wrapper {
-  top: 65px;
-  left: 505px;
-  width: 54px;
-  height: 115px;
-  overflow: hidden;
-  position: absolute;
-  transition: all 4s ease-in-out;
-}
-#div-age-bar-wrapper.first {
-  width: 201px;
-}
-#div-age-bar-wrapper.second {
-  width: 274px;
-}
-#div-age-bar-wrapper.three {
- width: 486px;
 }
 
 
@@ -488,25 +476,31 @@ footer.footer-view-6 {
   cursor: pointer;
 }
 .p-claimed-for-major {
-  margin-top: 50px;
+  display: none;
+  margin-top: 130px;
+  position: absolute;
 }
-.p-stage-critical-illness{
-  margin-top: 5px;
+.p-stage-critical-illness {
+  display: none;
+  margin-top: 180px;
+  position: absolute;
 }
 .p-power-reset-message {
+  display: none;
   margin-top: 10px;
+  position: absolute;
 }
 
 
 /* Popups */
-.div-popup-first {
+.div-popup-first, .div-popup-second, .div-popup-three {
   top: 0;
   width: 100%;
   height: 100%;
   position: absolute;
-  transition: all .2s ease-in-out;
+  display: none;
 }
-.div-popup-first img {
+.div-popup-first img, .div-popup-second img, .div-popup-three img {
   height: 100%;
   width: 100%;
 }
@@ -518,6 +512,52 @@ footer.footer-view-6 {
   z-index: 9;
   bottom: 105px;
   left: 390px;
+}
+.div-popup-second .fake-button-close {
+  width: 243px;
+  height: 50px;
+  cursor: pointer;
+  position: absolute;
+  z-index: 9;
+  bottom: 168px;
+  left: 390px;
+}
+.span-covered-for-popup {
+  top: 431px;
+  left: 659px;
+  font-weight: 500;
+  font-size: 1.7rem;
+  position: absolute;
+}
+.div-popup-three .div-person-for-popup {
+  top: 244px;
+  left: 467px;
+  width: 90px;
+  height: 90px;
+  position: absolute;
+}
+.div-popup-three .div-person-for-popup.female {
+  background: url(../images/female_old.png);
+  background-size: contain;
+}
+.div-popup-three .div-person-for-popup.male {
+  background: url(../images/male_old.png);
+  background-size: contain;
+}
+.div-popup-three .fake-button-close {
+  z-index: 9;
+  left: 390px;
+  width: 243px;
+  height: 50px;
+  bottom: 180px;
+  cursor: pointer;
+  position: absolute;
+}
+.div-popup-three .popup-three-replay-button {
+  left: 255px;
+}
+.div-popup-three .popup-three-review-button {
+  left: 526px;
 }
 
 

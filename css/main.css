@@ -6,7 +6,6 @@
 html {
   font-size: 10px;
 }
-
 body {
   width: 100%;
   height: 100%;
@@ -34,7 +33,7 @@ header {
 paper-button.back-icon {
   left: 0px;
   width: 80px;
-  height: 78px;
+  height: 75px;
   position: absolute;
   background-image: url("../images/icon_back.png");
   background-repeat: no-repeat;
@@ -55,9 +54,13 @@ footer {
   background-color: #DDDDDD;
 }
 
+
 p {
   margin: 0px;
   padding: 0px;
+}
+.hidden {
+  display: none;
 }
 .color-primary {
   color: #D31145;
@@ -68,8 +71,8 @@ paper-button {
   -webkit-box-shadow:rgba(0, 0, 0, 0.2) 0 5px 5px 0;
   -moz-box-shadow:rgba(0, 0, 0, 0.2) 0 5px 5px 0;
 }
-.hidden {
-  display: none;
+paper-button:active {
+  background-color: #9c0c33 !important;
 }
 
 .view-1, .view-2, .view-3 {
