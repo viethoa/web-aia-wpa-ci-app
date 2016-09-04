@@ -8,11 +8,11 @@ footer.footer-view-6 {
 
 /* For background */
 @-webkit-keyframes animatedBackground {
-  0% { transform: translateX(-517) }
+  0% { transform: translateX(0) }
   100% { transform: translateX(-1034px) } /* x0.5 width*/
 }
 @keyframes animatedBackground {
-  0% { transform: translateX(-517) }
+  0% { transform: translateX(0) }
   100% { transform: translateX(-1034px) }
 }
 #parallax-wrapper {
@@ -28,12 +28,12 @@ footer.footer-view-6 {
   width: 4136px; /* x2 width*/
   height: 100%;
   position: relative;
-  transform: translateX(-517);
+  //transform: translateX(-517);
   background: url(../images/view-6-background.jpg) repeat 0 0;
 }
 #parallax-background.first {
-  -webkit-animation: animatedBackground 4s linear;
-  animation: animatedBackground 4s linear;
+  -webkit-animation: animatedBackground 8s linear;
+  animation: animatedBackground 8s linear;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
@@ -44,8 +44,8 @@ footer.footer-view-6 {
   transform: translate3d(0, 0, 0);
 }
 #parallax-background.three {
-  -webkit-animation: animatedBackground 4s linear;
-  animation: animatedBackground 4s linear;
+  -webkit-animation: animatedBackground 8s linear;
+  animation: animatedBackground 8s linear;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
@@ -80,7 +80,7 @@ footer.footer-view-6 {
   -ms-transform: scale(0.5, 0.5);
   -webkit-transform: scale(0.5, 0.5);
   transform: scale(0.5, 0.5);
-  transition: all 4s ease-in-out;
+  transition: all 8s ease-in-out;
 }
 .span-3rd-year-old {
   -ms-transform: scale(0.5, 0.5);
@@ -92,7 +92,7 @@ footer.footer-view-6 {
   -ms-transform: scale(0.5, 0.5);
   -webkit-transform: scale(0.5, 0.5);
   transform: scale(0.5, 0.5);
-  transition: all 4s ease-in-out;
+  transition: all 8s ease-in-out;
 }
 #div-age-bar-wrapper {
   top: 65px;
@@ -104,7 +104,7 @@ footer.footer-view-6 {
 }
 #div-age-bar-wrapper.first {
   width: 201px;
-  transition: width 4s ease-in-out;
+  transition: width 8s ease-in-out;
 }
 #div-age-bar-wrapper.second {
   width: 274px;
@@ -112,7 +112,7 @@ footer.footer-view-6 {
 }
 #div-age-bar-wrapper.three {
  width: 486px;
- transition: width 4s ease-in-out;
+ transition: width 8s ease-in-out;
 }
 
 

@@ -348,7 +348,7 @@ function coveredCalculater(pointer, value) {
 
 function clearGender() {
   gender = -1;
-  window.localStorage.setItem("gender", gender);
+  $.cookie("gender", gender);
 
   $('.img-male').removeClass('selected');
   $('.img-female').removeClass('selected');
@@ -356,7 +356,7 @@ function clearGender() {
 
 function clearSmoker() {
   smoker = -1;
-  window.localStorage.setItem("smoker", smoker);
+  $.cookie("smoker", smoker);
 
   $('.img-smoker').removeClass('selected');
   $('.img-non-smoker').removeClass('selected');
@@ -366,10 +366,10 @@ function clearSmoker() {
 function clearAgeAndCovered() {
   age = -1;
   covered = -1;
-  window.localStorage.setItem("age", age);
-  window.localStorage.setItem("covered", covered);
-  window.localStorage.setItem("ageValueAtWidth", -1);
-  window.localStorage.setItem("coveredValueAtWidth", -1);
+  $.cookie("age", age);
+  $.cookie("covered", covered);
+  $.cookie("ageValueAtWidth", -1);
+  $.cookie("coveredValueAtWidth", -1);
 
   $('.span-age-text').html('2 WEEKS');
   $('.span-covered-text').html('S$50K');
@@ -388,12 +388,12 @@ $('.btn-view-four-clear').click(function() {
 });
 
 $('.btn-view-four-next').click(function() {
-  window.localStorage.setItem("gender", gender);
-  window.localStorage.setItem("smoker", smoker);
-  window.localStorage.setItem("age", age);
-  window.localStorage.setItem("covered", covered);
-  window.localStorage.setItem("ageValueAtWidth", ageValueAtWidth);
-  window.localStorage.setItem("coveredValueAtWidth", coveredValueAtWidth);
+  $.cookie("gender", gender);
+  $.cookie("smoker", smoker);
+  $.cookie("age", age);
+  $.cookie("covered", covered);
+  $.cookie("ageValueAtWidth", ageValueAtWidth);
+  $.cookie("coveredValueAtWidth", coveredValueAtWidth);
 
   initializeViewFive();
   navigation(4, 5);
@@ -403,7 +403,7 @@ $('.btn-view-four-next').click(function() {
 //--- onReady ------------------------------------------------------------------
 
 $(document).ready(function() {
-  gender = window.localStorage.getItem('gender');
+  gender = $.cookie('gender');
   if (gender == -1) {
     return;
   }
@@ -414,7 +414,7 @@ $(document).ready(function() {
     activeMale();
   }
 
-  smoker = window.localStorage.getItem('smoker');
+  smoker = $.cookie('smoker');
   if (smoker == -1) {
     return;
   }
@@ -425,8 +425,8 @@ $(document).ready(function() {
     activeSmoker();
   }
 
-  age = window.localStorage.getItem('age');
-  ageValueAtWidth = window.localStorage.getItem('ageValueAtWidth');
+  age = $.cookie('age');
+  ageValueAtWidth = $.cookie('ageValueAtWidth');
   if (age == -1) {
     return;
   } else {
@@ -435,8 +435,8 @@ $(document).ready(function() {
     $('.div-age-pointer').css('left', ageValueAtWidth + "px");
   }
 
-  covered = window.localStorage.getItem('covered');
-  coveredValueAtWidth = window.localStorage.getItem('coveredValueAtWidth');
+  covered = $.cookie('covered');
+  coveredValueAtWidth = $.cookie('coveredValueAtWidth');
   if (covered == -1) {
     return;
   } else {
@@ -557,9 +557,9 @@ var powerSetMonthMessage = $('.p-power-reset-message');
 var powerSetMonth = $('#p-power-set-month');
 var isReviewTime = false;
 
-var firstAnimationTime = 4000;
+var firstAnimationTime = 8000;
 var secondAnimationTime = 8000;
-var threeAnimationTime = 4000;
+var threeAnimationTime = 8000;
 
 function firstInitViewSix() {
   firstYearOld.html(age);
