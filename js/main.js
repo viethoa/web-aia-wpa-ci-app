@@ -551,6 +551,11 @@ var walkPaper4 = $('#walker-background-4');
 var popupFirst = $('.div-popup-first');
 var popupSecond = $('.div-popup-second');
 var popupThree = $('.div-popup-three');
+var popupTapping = $('.tapping-wrapper');
+
+var powerSetMonthMessage = $('.p-power-reset-message');
+var powerSetMonth = $('#p-power-set-month');
+var isReviewTime = false;
 
 var firstAnimationTime = 4000;
 var secondAnimationTime = 8000;
@@ -607,7 +612,7 @@ $('.popup-first-close-button').click(function() {
   secondInitView6();
   setTimeout(function() {
     $('#span-money').html("S$0");
-    $('.p-power-reset-message').fadeIn(300);
+    powerSetMonthMessage.fadeIn(300);
     $('.p-claimed-for-major').html('CLAIN AMOUNT');
     $('.p-stage-critical-illness').html('RECEIVED S$' + Number(covered * 1000).toLocaleString('en'));
   }, 2000);
@@ -619,7 +624,9 @@ $('.popup-first-close-button').click(function() {
       $(this).html('STAGE CRITICAL ILLNESS');
     });
 
-    secondAnimationView6();
+    if (!isReviewTime) {
+      secondAnimationView6();
+    }
   }, 4000);
 });
 
@@ -652,9 +659,9 @@ function secondAnimationView6() {
   var monthInterval = setInterval(function(){
     month -= 1;
     if (month == 1) {
-      $('#p-power-set-month').html(month + " MONTH");
+      powerSetMonth.html(month + " MONTH");
     } else if (month > 1) {
-      $('#p-power-set-month').html(month + " MONTHS");
+      powerSetMonth.html(month + " MONTHS");
     }
   }, secondAnimationTime / 12);
 
@@ -665,7 +672,7 @@ function secondAnimationView6() {
     popupSecond.fadeIn(300);
     ageAnimation.html(age + 6);
     parallaxBackground.removeClass('second');
-    $('.p-power-reset-message').fadeOut(300);
+    powerSetMonthMessage.fadeOut(300);
     $('#span-money').html("S$" + Number(covered * 1000).toLocaleString('en'));
     $('.span-covered-for-popup').html("S$" + Number(covered * 1000).toLocaleString('en'));
 
@@ -694,7 +701,9 @@ function threeInitView6() {
 
 $('.popup-second-close-button').click(function() {
   $(this).parent().fadeOut(300);
-  threeAnimationView6();
+  if (!isReviewTime) {
+    threeAnimationView6();
+  }
 });
 
 function threeAnimationView6() {
@@ -727,6 +736,7 @@ function threeAnimationView6() {
 
 $('.popup-three-replay-button').click(function() {
   $(this).parent().fadeOut(300);
+  isReviewTime = false;
   resetView6();
 });
 
@@ -737,7 +747,7 @@ function resetView6() {
   fourYearOld.removeClass('active');
   rainningWrapper.removeClass('appear').removeClass('hidding');
   ageBarWapper.removeClass('first').removeClass('second').removeClass('three');
-  $('#p-power-set-month').html("12 MONTHS");
+  powerSetMonth.html("12 MONTHS");
   firstInitViewSix();
 
   setTimeout(function() {
@@ -749,9 +759,58 @@ function resetView6() {
 //---Review animation-----------------------------------------------------------
 
 $('.popup-three-review-button').click(function() {
+  $(this).parent().fadeOut(100);
+  popupTapping.fadeIn(300);
 
+  powerSetMonth.html("12 MONTHS");
+  rainningWrapper.removeClass('appear').removeClass('hidding');
 });
 
+popupTapping.click(function() {
+  $(this).fadeOut(300);
+  isReviewTime = true;
+});
+
+$('#span-first-year-old').click(function() {
+  if (!isReviewTime) {
+    return;
+  }
+
+  ageAnimation.html(age);
+  powerSetMonthMessage.fadeOut(300);
+  rainningWrapper.removeClass('appear');
+});
+
+$('#span-second-year-old').click(function() {
+  if (!isReviewTime) {
+    return;
+  }
+
+  popupFirst.fadeIn(300);
+  ageAnimation.html(age + 5);
+});
+
+$('#span-3rd-year-old').click(function() {
+  if (!isReviewTime) {
+    return;
+  }
+
+  ageAnimation.html(age + 6);
+  popupSecond.fadeIn(300);
+  powerSetMonthMessage.fadeOut(300);
+  rainningWrapper.removeClass('appear');
+});
+
+$('#span-4th-year-old').click(function() {
+  if (!isReviewTime) {
+    return;
+  }
+
+  ageAnimation.html(75);
+  popupThree.fadeIn(300);
+  powerSetMonthMessage.fadeOut(300);
+  rainningWrapper.removeClass('appear');
+});
 
 
 

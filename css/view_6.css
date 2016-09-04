@@ -462,7 +462,7 @@ footer.footer-view-6 {
   left: 665px;
 }
 #span-3rd-year-old {
-  left: 740px;
+  left: 738px;
 }
 #span-4th-year-old {
   left: 948px;
@@ -474,6 +474,8 @@ footer.footer-view-6 {
   font-size: 3.7rem;
   top: 103px;
   cursor: pointer;
+  width: 32px;
+  text-align: center;
 }
 .p-claimed-for-major {
   display: none;
@@ -559,6 +561,137 @@ footer.footer-view-6 {
 .div-popup-three .popup-three-review-button {
   left: 526px;
 }
+
+
+/* tapping illutrator */
+/* For Walker */
+@keyframes animatedTappingOne {
+  0% { opacity: 1; }
+  18% { opacity: 1; }
+  19% { opacity: 0; }
+  100% { opacity: 0; }
+}
+@keyframes animatedTappingTwo {
+  0% { opacity: 0; }
+  17% { opacity: 0; }
+  18% { opacity: 1; }
+  36% { opacity: 1; }
+  37% { opacity: 0; }
+  100% { opacity: 0; }
+}
+@keyframes animatedTappingThree {
+  0% { opacity: 0; }
+  35% { opacity: 0; }
+  36% { opacity: 1; }
+  54% { opacity: 1; }
+  55% { opacity: 0; }
+  100% { opacity: 0; }
+}
+@keyframes animatedTappingFour {
+  0% { opacity: 0; }
+  53% { opacity: 0; }
+  54% { opacity: 1; }
+  72% { opacity: 1; }
+  73% { opacity: 0; }
+  100% { opacity: 0; }
+}
+@keyframes animatedTappingFive {
+  0% { opacity: 0; }
+  71% { opacity: 0; }
+  72% { opacity: 1; }
+  90% { opacity: 1; }
+  91% { opacity: 0; }
+  100% { opacity: 0; }
+}
+@keyframes animatedTappingSix {
+  0% { opacity: 0; }
+  89% { opacity: 0; }
+  90% { opacity: 1; }
+  100% { opacity: 1; }
+}
+.tapping-wrapper {
+  background: url(../images/Tapping_illustrator_bg.png) repeat 0 0;
+  background-size: contain;
+  position: absolute;
+  width: 110%;
+  height: 100%;
+  top: -18px;
+  left: -20px;
+  display: none;
+}
+.tapping-background-1, .tapping-background-2, .tapping-background-3,
+.tapping-background-4, .tapping-background-5, .tapping-background-6 {
+  position: absolute;
+  width: 110px;
+  height: 172px;
+  top: 265px;
+  right: 357px;
+}
+.tap-on-the-age-to-review {
+  position: absolute;
+  font-size: 5rem;
+  color: #fff;
+  top: 195px;
+  right: 198px;
+}
+.tapping-background-1 {
+  opacity: 1;
+  background: url(../images/Tapping_illustrator_1.png) repeat 0 0;
+  background-size: contain;
+  -webkit-animation: animatedTappingOne 0.9s linear infinite;
+  animation: animatedTappingOne 0.9s linear infinite;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.tapping-background-2 {
+  opacity: 0;
+  background: url(../images/Tapping_illustrator_2.png) repeat 0 0;
+  background-size: contain;
+  -webkit-animation: animatedTappingTwo 0.9s linear infinite;
+  animation: animatedTappingTwo 0.9s linear infinite;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.tapping-background-3 {
+  opacity: 0;
+  background: url(../images/Tapping_illustrator_3.png) repeat 0 0;
+  background-size: contain;
+  -webkit-animation: animatedTappingThree 0.9s linear infinite;
+  animation: animatedTappingThree 0.9s linear infinite;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.tapping-background-4 {
+  opacity: 0;
+  background: url(../images/Tapping_illustrator_4.png) repeat 0 0;
+  background-size: contain;
+  -webkit-animation: animatedTappingFour 0.9s linear infinite;
+  animation: animatedTappingFour 0.9s linear infinite;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.tapping-background-5 {
+  opacity: 0;
+  background: url(../images/Tapping_illustrator_5.png) repeat 0 0;
+  background-size: contain;
+  -webkit-animation: animatedTappingFive 0.9s linear infinite;
+  animation: animatedTappingFive 0.9s linear infinite;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.tapping-background-6 {
+  opacity: 0;
+  background: url(../images/Tapping_illustrator_6.png) repeat 0 0;
+  background-size: contain;
+  -webkit-animation: animatedTappingSix 0.9s linear infinite;
+  animation: animatedTappingSix 0.9s linear infinite;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+
+
+
 
 
 
