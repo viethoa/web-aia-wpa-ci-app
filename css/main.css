@@ -67,9 +67,6 @@ p {
 }
 paper-button {
   cursor: pointer;
-  box-shadow:rgba(0, 0, 0, 0.2) 0 5px 5px 0;
-  -webkit-box-shadow:rgba(0, 0, 0, 0.2) 0 5px 5px 0;
-  -moz-box-shadow:rgba(0, 0, 0, 0.2) 0 5px 5px 0;
 }
 paper-button:active {
   background-color: #9c0c33 !important;

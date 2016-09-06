@@ -42,7 +42,7 @@ paper-button.btn-view-four-clear {
 
 .ul-gender-smker-images {
   list-style: none;
-  margin-top: 137px;
+  margin-top: 127px;
 }
 .ul-gender-smker-images li {
   float: left;
@@ -52,19 +52,19 @@ paper-button.btn-view-four-clear {
 }
 .img-female {
   content: url(../images/view_4_btn_female_normal.png);
-  margin-left: 22px;
+  margin-left: 18px;
 }
 .img-male {
   content: url(../images/view_4_btn_male_normal.png);
-  margin-left: 27px;
+  margin-left: 23px;
 }
 .img-smoker {
   content: url(../images/view_4_btn_smoker_normal.png);
-  margin-left: 67px;
+  margin-left: 62px;
 }
 .img-non-smoker {
   content: url(../images/view_4_btn_nonsmoker_normal.png);
-  margin-left: 37px;
+  margin-left: 31px;
 }
 .img-female.selected {
   content: url(../images/view_4_btn_female_selected.png);
@@ -84,19 +84,19 @@ paper-button.btn-view-four-clear {
   color: #D31145;
   font-size: 1.8rem;
   position: absolute;
-  margin-top: 125px;
+  margin-top: 120px;
   margin-left: 130px;
 }
 
 .div-age-pointer {
   position: absolute;
-  margin-top: 159px;
+  margin-top: 156.7px;
   margin-left: 36px;
   left: 0px;
 }
 .div-covered-pointer {
   position: absolute;
-  margin-top: 326px;
+  margin-top: 317px;
   margin-left: 36px;
   left: 0px;
 }
@@ -104,13 +104,13 @@ paper-button.btn-view-four-clear {
   position: absolute;
   color: #ffffff;
   font-size: 1.7rem;
-  width: 65px;
-  height: 30px;
+  width: 60px;
+  height: 27px;
+  line-height: 27px;
   text-align: center;
-  line-height: 30px;
 }
 .div-age-pointer img, .div-covered-pointer img {
-  width: 65px;
+  width: 60px;
   cursor: pointer;
 }
 

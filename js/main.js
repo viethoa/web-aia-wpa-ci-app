@@ -21,19 +21,19 @@ var viewSixFooter = "<b>Note:</b> This is for illustration purpose only.";
 function navigation(currentView, nextView) {
   switch(currentView) {
     case 1:
-    ViewOne.fadeOut(200);
+    ViewOne.fadeOut(100);
     previousPage.push("view-1");
     break;
     case 2:
-    ViewTwo.fadeOut(200);
+    ViewTwo.fadeOut(100);
     previousPage.push("view-2");
     break;
     case 3:
-    ViewThree.fadeOut(200);
+    ViewThree.fadeOut(100);
     previousPage.push("view-3");
     break;
     case 4:
-    ViewFour.fadeOut(200);
+    ViewFour.fadeOut(100);
     previousPage.push("view-4");
     break;
   }
@@ -66,37 +66,37 @@ $('.back-icon').click(function() {
 
   switch(previuos) {
     case "view-1":
-    ViewTwo.fadeOut(200);
-    ViewThree.fadeOut(200);
+    ViewTwo.fadeOut(100);
+    ViewThree.fadeOut(100);
     ViewOne.fadeIn();
     footer.html(viewOneFooter);
     break;
     case "view-2":
-    ViewThree.fadeOut(200);
+    ViewThree.fadeOut(100);
     ViewTwo.fadeIn();
     footer.html(viewTwoFooter);
     break;
     case "view-3":
-    ViewFour.fadeOut(200);
+    ViewFour.fadeOut(100);
     ViewThree.fadeIn();
     footer.html(viewThreeFooter);
     break;
     case "view-4":
-    ViewFive.fadeOut(200);
+    ViewFive.fadeOut(100);
     ViewFour.fadeIn();
     footer.html(viewFourFooter);
     break;
     case "view-5-section-1":
-    ViewSix.fadeOut(200);
+    ViewSix.fadeOut(100);
     ViewFive.fadeIn();
-    viewFiveSectionTwo.fadeOut(200);
+    viewFiveSectionTwo.fadeOut(100);
     viewFiveSectionOne.fadeIn();
     footer.html(viewFiveFooter);
     break;
     case "view-5-section-2":
-    ViewSix.fadeOut(200);
+    ViewSix.fadeOut(100);
     ViewFive.fadeIn();
-    viewFiveSectionOne.fadeOut(200);
+    viewFiveSectionOne.fadeOut(100);
     viewFiveSectionTwo.fadeIn();
     footer.html(viewFiveSectionTwoFooter);
     break;
@@ -163,7 +163,7 @@ var coveredDisableMask = $('.covered-disable-mask')
 var smokerDisableMask = $('.smoker-disable-mask');
 var ageValue = $('.span-age-text');
 var coveredValue = $('.span-covered-text');
-var maxPageWidth = 874;
+var maxPageWidth = 836;
 var maxAge = 65;
 var maxCovered = 45;
 var startCovered = 50;
@@ -172,6 +172,8 @@ var smokeAble = 16;
 var gender = -1;
 var smoker = -1;
 var age = -1;
+var ageTwo = -1;
+var ageThree = -1;
 var ageValueAtWidth = -1;
 var covered = -1;
 var coveredValueAtWidth = -1;
@@ -303,6 +305,15 @@ function ageCalculater(pointer, value) {
   } else {
     ageValue.html(age + " YEARS");
   }
+
+  // Age two is new logic that minimum ageTwo is 40 years old.
+  ageTwo = age + 5;
+  if (ageTwo < 40) {
+    ageTwo = 40;
+  }
+
+  // ageThree = ageTwo + 1.
+  ageThree = ageTwo + 1;
 };
 
 
@@ -563,8 +574,8 @@ var threeAnimationTime = 8000;
 
 function firstInitViewSix() {
   firstYearOld.html(age);
-  secondYearOld.html(age + 5);
-  threeYearOld.html(age + 5 + 1);
+  secondYearOld.html(ageTwo);
+  threeYearOld.html(ageThree);
   if (gender == 0) {
     walkPaper1.addClass('female-walker-1');
     walkPaper2.addClass('female-walker-2');
@@ -591,7 +602,7 @@ function firstAnimationView6() {
   var ageInterval = setInterval(function(){
     currentAge += 1;
     ageAnimation.html(currentAge);
-  }, firstAnimationTime / 5);
+  }, firstAnimationTime / (ageTwo - age));
 
   setTimeout(function() {
     // show popup
@@ -613,7 +624,7 @@ $('.popup-first-close-button').click(function() {
   setTimeout(function() {
     $('#span-money').html("S$0");
     powerSetMonthMessage.fadeIn(300);
-    $('.p-claimed-for-major').html('CLAIN AMOUNT');
+    $('.p-claimed-for-major').html('CLAIM AMOUNT');
     $('.p-stage-critical-illness').html('RECEIVED S$' + Number(covered * 1000).toLocaleString('en'));
   }, 2000);
   setTimeout(function() {
@@ -670,7 +681,7 @@ function secondAnimationView6() {
     clearInterval(monthInterval);
 
     popupSecond.fadeIn(300);
-    ageAnimation.html(age + 6);
+    ageAnimation.html(ageThree);
     parallaxBackground.removeClass('second');
     powerSetMonthMessage.fadeOut(300);
     $('#span-money').html("S$" + Number(covered * 1000).toLocaleString('en'));
@@ -714,13 +725,13 @@ function threeAnimationView6() {
     parallaxBackground.addClass('three');
   }, 200);
 
-  var currentAge = age + 6;
+  var currentAge = ageThree;
   var ageInterval = setInterval(function(){
     currentAge += 1;
     if (currentAge <= 75) {
       ageAnimation.html(currentAge);
     }
-  }, threeAnimationTime / (75 - (age + 6)));
+  }, threeAnimationTime / (75 - ageThree));
 
   setTimeout(function() {
     parallaxBackground.removeClass('three');
@@ -787,7 +798,7 @@ $('#span-second-year-old').click(function() {
   }
 
   popupFirst.fadeIn(300);
-  ageAnimation.html(age + 5);
+  ageAnimation.html(ageTwo);
 });
 
 $('#span-3rd-year-old').click(function() {
@@ -795,7 +806,7 @@ $('#span-3rd-year-old').click(function() {
     return;
   }
 
-  ageAnimation.html(age + 6);
+  ageAnimation.html(ageThree);
   popupSecond.fadeIn(300);
   powerSetMonthMessage.fadeOut(300);
   rainningWrapper.removeClass('appear');
