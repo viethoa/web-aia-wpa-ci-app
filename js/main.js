@@ -1,3 +1,6 @@
+//------------------------------------------------------------------------------
+// global values
+//------------------------------------------------------------------------------
 
 var ViewOne = $('.view-1');
 var ViewTwo = $('.view-2');
@@ -5,17 +8,8 @@ var ViewThree = $('.view-3');
 var ViewFour = $('.view-4');
 var ViewFive = $('.view-5');
 var ViewSix = $('.view-6');
-var footer = $('.p-footer-content');
 
 var previousPage = [];
-
-var viewOneFooter = "<b>Note:</b> This is for illustration purpose only.";
-var viewTwoFooter = "Source: 1. AIA Health Matters Survey 2016 <br/> <b>Note:</b> This is for illustration purpose only.";
-var viewThreeFooter = "<b>Note:</b> This is for illustration purpose only.";
-var viewFourFooter = "<b>Note:</b> This is for illustration purpose only. For more details and illustration of higher sum assured amount, you should refer to the Benefit Illustration, which can be obtained from your AIA Financial Services Consultant.";
-var viewFiveFooter = "1.  For Life plan, a Maturity Benefit of 100% of your sum assured amount (less any critical illness claims paid) will be payable if you wish to hold your policy until maturity (age 100). <br/> 2.  The surrender value illustrated is based on the assumption that no critical illness claim is paid. <br/> <b>Note:</b> This is for illustration purpose only. Premiums illustrated are non-guaranteed. For more details, you should refer to the Benefit Illustration, which can be obtained from your AIA Financial Services Consultant.";
-var viewFiveSectionTwoFooter = "1  Premium discount is based on standard life and will not be applicable on any extra premiums due to loading.  2  The additional 5% special discount is only applicable in the first policy year and is subject to promotion period. Each member starts off with Bronze Vitality Status.  3  Based on the assumption that members remain on the Platinum Vitality status from second policy year to age 75. The maximum premium discount figures illustrated are rounded down to the nearest S$100. <br/> <b>Note:</b> This is for illustration purpose only.";
-var viewSixFooter = "<b>Note:</b> This is for illustration purpose only.";
 
 
 function navigation(currentView, nextView) {
@@ -42,25 +36,20 @@ function navigation(currentView, nextView) {
   switch(nextView) {
     case 2:
     ViewTwo.fadeIn();
-    footer.html(viewTwoFooter);
     break;
     case 3:
     ViewThree.fadeIn();
-    footer.html(viewThreeFooter);
     break;
     case 4:
     ViewFour.fadeIn();
-    footer.html(viewFourFooter);
     break;
     case 5:
     ViewFive.fadeIn();
-    footer.html(viewFiveFooter);
     break;
   }
 }
 
 $('.back-icon').click(function() {
-  $('#footer').removeClass('footer-view-6');
   var previuos = previousPage.pop();
   //console.log(previousPage);
 
@@ -69,39 +58,36 @@ $('.back-icon').click(function() {
     ViewTwo.fadeOut(100);
     ViewThree.fadeOut(100);
     ViewOne.fadeIn();
-    footer.html(viewOneFooter);
     break;
     case "view-2":
     ViewThree.fadeOut(100);
     ViewTwo.fadeIn();
-    footer.html(viewTwoFooter);
     break;
     case "view-3":
     ViewFour.fadeOut(100);
     ViewThree.fadeIn();
-    footer.html(viewThreeFooter);
     break;
     case "view-4":
     ViewFive.fadeOut(100);
     ViewFour.fadeIn();
-    footer.html(viewFourFooter);
     break;
     case "view-5-section-1":
+    resetDataView6();
     ViewSix.fadeOut(100);
     ViewFive.fadeIn();
     viewFiveSectionTwo.fadeOut(100);
     viewFiveSectionOne.fadeIn();
-    footer.html(viewFiveFooter);
     break;
     case "view-5-section-2":
+    resetDataView6();
     ViewSix.fadeOut(100);
     ViewFive.fadeIn();
     viewFiveSectionOne.fadeOut(100);
     viewFiveSectionTwo.fadeIn();
-    footer.html(viewFiveSectionTwoFooter);
     break;
   }
 });
+
 
 //------------------------------------------------------------------------------
 // View 1
@@ -509,7 +495,6 @@ $('.btn-view-five-vitality').click(function() {
   } else {
     viewFiveSectionOne.fadeOut(200);
     viewFiveSectionTwo.fadeIn();
-    footer.html(viewFiveSectionTwoFooter);
     previousPage.push("view-5-section-1");
     console.log(previousPage);
   }
@@ -518,28 +503,23 @@ $('.btn-view-five-vitality').click(function() {
 $('.btn-view-five-back').click(function() {
   viewFiveSectionOne.fadeIn();
   viewFiveSectionTwo.fadeOut(200);
-  footer.html(viewFiveFooter);
   previousPage.pop();
   //console.log(previousPage);
 });
 
 $('.btn-view-five-next-1').click(function() {
-  $('#footer').addClass('footer-view-6');
   previousPage.push("view-5-section-1");
-  footer.html(viewSixFooter);
   ViewFive.fadeOut(200);
   ViewSix.fadeIn();
-  firstInitViewSix();
-  firstAnimationView6();
+  resetDataView6();
+  startAnimateView6();
 });
 $('.btn-view-five-next-2').click(function() {
-  $('#footer').addClass('footer-view-6');
   previousPage.push("view-5-section-2");
-  footer.html(viewSixFooter);
   ViewFive.fadeOut(200);
   ViewSix.fadeIn();
-  firstInitViewSix();
-  firstAnimationView6();
+  resetDataView6();
+  startAnimateView6();
 });
 
 //------------------------------------------------------------------------------
@@ -566,11 +546,37 @@ var popupTapping = $('.tapping-wrapper');
 
 var powerSetMonthMessage = $('.p-power-reset-message');
 var powerSetMonth = $('#p-power-set-month');
+var ageInterval;
+var monthInterval;
 var isReviewTime = false;
 
 var firstAnimationTime = 8000;
 var secondAnimationTime = 8000;
 var threeAnimationTime = 8000;
+
+function resetDataView6() {
+  ageAnimation.html(age);
+  secondYearOld.removeClass('active');
+  threeYearOld.removeClass('active');
+  fourYearOld.removeClass('active');
+  rainningWrapper.removeClass('appear').removeClass('hidding');
+  ageBarWapper.removeClass('first').removeClass('second').removeClass('three');
+  powerSetMonth.html("12 MONTHS");
+
+  popupFirst.hide();
+  popupSecond.hide();
+  popupThree.hide();
+  popupTapping.hide();
+  clearInterval(ageInterval);
+  clearInterval(monthInterval);
+}
+
+function startAnimateView6() {
+  firstInitViewSix();
+  setTimeout(function() {
+    firstAnimationView6();
+  }, 300);
+}
 
 function firstInitViewSix() {
   firstYearOld.html(age);
@@ -599,7 +605,7 @@ function firstAnimationView6() {
   ageBarWapper.addClass('first');
 
   var currentAge = age;
-  var ageInterval = setInterval(function(){
+  ageInterval = setInterval(function(){
     currentAge += 1;
     ageAnimation.html(currentAge);
   }, firstAnimationTime / (ageTwo - age));
@@ -609,6 +615,7 @@ function firstAnimationView6() {
     popupFirst.fadeIn(300);
     // clear animtion
     clearInterval(ageInterval);
+    ageAnimation.html(ageTwo);
     walkWrapper.removeClass('active');
     parallaxBackground.removeClass('first');
   }, firstAnimationTime);
@@ -667,7 +674,7 @@ function secondAnimationView6() {
   rainningWrapper.addClass('hidding');
 
   var month = 12;
-  var monthInterval = setInterval(function(){
+  monthInterval = setInterval(function(){
     month -= 1;
     if (month == 1) {
       powerSetMonth.html(month + " MONTH");
@@ -726,7 +733,7 @@ function threeAnimationView6() {
   }, 200);
 
   var currentAge = ageThree;
-  var ageInterval = setInterval(function(){
+  ageInterval = setInterval(function(){
     currentAge += 1;
     if (currentAge <= 75) {
       ageAnimation.html(currentAge);
@@ -748,23 +755,9 @@ function threeAnimationView6() {
 $('.popup-three-replay-button').click(function() {
   $(this).parent().fadeOut(300);
   isReviewTime = false;
-  resetView6();
+  resetDataView6();
+  startAnimateView6();
 });
-
-function resetView6() {
-  ageAnimation.html(age);
-  secondYearOld.removeClass('active');
-  threeYearOld.removeClass('active');
-  fourYearOld.removeClass('active');
-  rainningWrapper.removeClass('appear').removeClass('hidding');
-  ageBarWapper.removeClass('first').removeClass('second').removeClass('three');
-  powerSetMonth.html("12 MONTHS");
-  firstInitViewSix();
-
-  setTimeout(function() {
-    firstAnimationView6();
-  }, 300);
-}
 
 
 //---Review animation-----------------------------------------------------------

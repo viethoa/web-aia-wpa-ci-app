@@ -60,7 +60,7 @@ p {
   padding: 0px;
 }
 .hidden {
-  display: none;
+  display: none !important;
 }
 .color-primary {
   color: #D31145;

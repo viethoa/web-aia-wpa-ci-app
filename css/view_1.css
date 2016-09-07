@@ -1,5 +1,7 @@
-.div-container {
-  /*box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);*/
+.view-1 {
+  background: url(../images/view_1_bg.jpg) fixed no-repeat bottom right;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 .ul-title-container, .ul-info-container, .ul-option-container {
   width: 100%;
@@ -60,7 +62,7 @@ img.view-one-btn-yes {
 }
 img.view-one-btn-no {
   display: none;
-  width: 220px;
+  width: 190px;
   background-repeat: no-repeat;
   background-size: contain;
 }

@@ -14,7 +14,7 @@
   width: 100%;
   height: 100%;
   position: absolute;
-  background-image: url(../images/view_5_ci_plan_background.png);
+  background: url(../images/view_5_bg_1.png) fixed no-repeat bottom right;
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -22,7 +22,7 @@
   width: 100%;
   height: 100%;
   position: absolute;
-  background-image: url(../images/view_5_discount_background.png);
+  background: url(../images/view_5_bg_2.png) fixed no-repeat bottom right;
   background-repeat: no-repeat;
   background-size: contain;
 }

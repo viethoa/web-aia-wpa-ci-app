@@ -1,5 +1,7 @@
-.view-3 .div-container {
-
+.view-3 {
+  background: url(../images/view_3_bg.png) fixed no-repeat bottom right;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 .view-3 .div-content {
   width: 100%;
