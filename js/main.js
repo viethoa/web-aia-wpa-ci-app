@@ -1,3 +1,66 @@
+function round(value, exp) {
+  if (typeof exp === 'undefined' || +exp === 0)
+    return Math.round(value);
+
+  value = +value;
+  exp = +exp;
+
+  if (isNaN(value) || !(typeof exp === 'number' && exp % 1 === 0))
+    return NaN;
+
+  // Shift
+  value = value.toString().split('e');
+  value = Math.round(+(value[0] + 'e' + (value[1] ? (+value[1] + exp) : exp)));
+
+  // Shift back
+  value = value.toString().split('e');
+  return +(value[0] + 'e' + (value[1] ? (+value[1] - exp) : -exp));
+}
+
+//------------------------------------------------------------------------------
+// Non-Smoker
+//------------------------------------------------------------------------------
+
+var discount = [5, 0, -10, -20];
+var MNSValuePlan = [7.04,7.21,7.38,7.56,7.74,7.93,8.22,8.52,8.83,9.15,9.47,9.68,9.9,10.12,10.35,10.59,10.88,11.26,11.65,12.05,12.47,12.89,13.32,13.77,14.23,14.7,15.13,15.58,16.04,16.51,17,17.52,18.06,18.61,19.18,19.76,20.43,21.13,21.85,22.59,23.36,24.3,25.28,26.3,27.36,28.46,30.06,31.75,33.53,35.41,37.4,39.93,42.63,45.52,48.6,51.9,55.58,59.53,63.76,68.29,73.13,79.18,85.73,92.82,100.5,108.82];
+var FNSValuePlan = [6.38,6.52,6.66,6.8,6.95,7.09,7.3,7.52,7.75,7.98,8.22,8.43,8.65,8.87,9.1,9.34,9.57,9.8,10.04,10.28,10.53,10.84,11.16,11.49,11.83,12.18,12.5,12.83,13.17,13.52,13.87,14.24,14.62,15.01,15.41,15.82,16.28,16.76,17.25,17.75,18.27,19.42,20.65,21.95,23.34,24.82,25.65,26.51,27.4,28.32,29.27,30.99,32.8,34.72,36.75,38.89,41.63,44.56,47.7,51.06,54.67,59.38,64.5,70.06,76.1,82.67];
+var MNSLifePlan = [8.72,8.97,9.23,9.49,9.76,10.04,10.35,10.67,11,11.34,11.7,12.1,12.52,12.95,13.4,13.87,14.32,14.78,15.26,15.75,16.26,16.91,17.59,18.3,19.04,19.8,20.47,21.17,21.89,22.63,23.4,24.21,25.05,25.92,26.82,27.75,28.86,30.02,31.23,32.48,33.79,35.06,36.38,37.75,39.17,40.66,42.94,45.35,47.9,50.59,53.43,57.05,60.91,65.03,69.43,74.14,79.41,85.05,91.09,97.56,104.48,113.12,122.48,132.61,143.58,155.46];
+var FNSLifePlan = [8.42,8.65,8.88,9.12,9.36,9.61,9.89,10.18,10.48,10.79,11.11,11.47,11.84,12.23,12.63,13.04,13.42,13.83,14.25,14.68,15.12,15.69,16.28,16.89,17.53,18.19,18.76,19.35,19.96,20.59,21.24,21.93,22.64,23.37,24.13,24.9,25.87,26.88,27.93,29.02,30.17,31.16,32.18,33.23,34.32,35.45,36.64,37.87,39.14,40.46,41.82,44.26,46.85,49.59,52.49,55.56,59.47,63.66,68.15,72.95,78.1,84.83,92.15,100.1,108.73,118.11];
+
+function annualPremiumCalculator(age, gender, sumAssured) {
+  var valuePlan = MNSValuePlan[age];
+  var lifePlan = MNSLifePlan[age];
+  if (gender == 0) {
+    valuePlan = FNSValuePlan[age];
+    lifePlan = FNSLifePlan[age];
+  }
+
+  var annualPremiumValue = valuePlan * sumAssured;
+  var annualPremiumLife = lifePlan * sumAssured;
+  console.log(annualPremiumValue, annualPremiumLife);
+
+  if (sumAssured < 100) {         // tang 5%
+    annualPremiumValue = annualPremiumValue + ((annualPremiumValue / 100) * discount[0]);
+    annualPremiumLife = annualPremiumLife + ((annualPremiumLife / 100) * discount[0]);
+  } else if (sumAssured < 250) {  // tang 0%
+    annualPremiumValue = annualPremiumValue + ((annualPremiumValue / 100) * discount[1]);
+    annualPremiumLife = annualPremiumLife + ((annualPremiumLife / 100) * discount[1]);
+  } else if (sumAssured < 350) {  // giam 10%
+    annualPremiumValue = annualPremiumValue + ((annualPremiumValue / 100) * discount[2]);
+    annualPremiumLife = annualPremiumLife + ((annualPremiumLife / 100) * discount[2]);
+  } else if (sumAssured < 500) {  // giam 20%
+    annualPremiumValue = annualPremiumValue + ((annualPremiumValue / 100) * discount[3]);
+    annualPremiumLife = annualPremiumLife + ((annualPremiumLife / 100) * discount[3]);
+  }
+
+  annualPremiumValue = round(annualPremiumValue, 2);
+  annualPremiumLife = round(annualPremiumLife, 2);
+  console.log(annualPremiumValue, annualPremiumLife);
+  $('.div-value-2').html(Number(annualPremiumValue).toLocaleString('en'));
+  $('.div-life-2').html(Number(annualPremiumLife).toLocaleString('en'));
+}
+
+
 //------------------------------------------------------------------------------
 // global values
 //------------------------------------------------------------------------------
@@ -472,16 +535,15 @@ function initializeViewFive() {
 
   //values
   $('.div-value-1').html(Number(covered * 1000).toLocaleString('en'));
-  //$('.div-value-2').html(Number(covered).toLocaleString('en'));
   //$('.div-value-3').html(Number(covered).toLocaleString('en'));
   //$('.div-value-4').html(Number(covered).toLocaleString('en'));
   //$('.div-value-5').html(Number(covered).toLocaleString('en'));
   // lifes
   $('.div-life-1').html(Number(covered * 1000).toLocaleString('en'));
-  //$('.div-life-2').html(Number(covered).toLocaleString('en'));
   //$('.div-life-3').html(Number(covered).toLocaleString('en'));
   //$('.div-life-4').html(Number(covered).toLocaleString('en'));
   //$('.div-life-5').html(Number(covered).toLocaleString('en'));
+  annualPremiumCalculator(age, gender, covered);
 }
 
 $('.btn-view-five-vitality').click(function() {
