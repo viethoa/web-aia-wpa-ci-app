@@ -39,7 +39,7 @@ paper-button.btn-view-five-back {
 }
 
 .div-review-self {
-  margin-top: 40px;
+  margin-top: 30px;
   font-size: 2.2rem;
   position: absolute;
   margin-left: 32px;
@@ -48,8 +48,8 @@ paper-button.btn-view-five-back {
 .div-membership-error-message {
   display: none;
   position: absolute;
-  margin-top: 55px;
-  margin-left: 497px;
+  margin-top: 47px;
+  margin-left: 457px;
   font-size: 1.6rem;
   font-family: serif;
   line-height: 1.1;
@@ -62,12 +62,12 @@ paper-button.btn-view-five-back {
   font-size: 2rem;
 }
 .div-value-1 {
-  margin-top: 190.5px;
+  margin-top: 188.5px;
   margin-left: 478px;
 }
 .div-value-2 {
   width: 81px;
-  margin-top: 235px;
+  margin-top: 233px;
   margin-left: 452px;
   text-align: center;
 }
@@ -92,22 +92,22 @@ paper-button.btn-view-five-back {
 .div-value-6 {
   width: 100px;
   text-align: center;
-  margin-top: 154px;
+  margin-top: 152px;
   margin-left: 442px;
 }
 .div-value-7 {
   width: 100px;
   text-align: center;
-  margin-top: 222px;
+  margin-top: 221px;
   margin-left: 442px;
 }
 .div-life-1 {
-  margin-top: 190.5px;
+  margin-top: 188.5px;
   margin-left: 785px;
 }
 .div-life-2 {
   width: 81px;
-  margin-top: 235px;
+  margin-top: 233px;
   margin-left: 761px;
   text-align: center;
 }
@@ -132,13 +132,13 @@ paper-button.btn-view-five-back {
 .div-life-6 {
   width: 100px;
   text-align: center;
-  margin-top: 154px;
+  margin-top: 152px;
   margin-left: 749px;
 }
 .div-life-7 {
   width: 100px;
   text-align: center;
-  margin-top: 222px;
+  margin-top: 221px;
   margin-left: 749px;
 }
 

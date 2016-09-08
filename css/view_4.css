@@ -41,7 +41,7 @@ paper-button.btn-view-four-clear {
 
 .ul-gender-smker-images {
   list-style: none;
-  margin-top: 127px;
+  margin-top: 115px;
 }
 .ul-gender-smker-images li {
   float: left;
@@ -89,14 +89,16 @@ paper-button.btn-view-four-clear {
 
 .div-age-pointer {
   position: absolute;
-  margin-top: 156.7px;
+  margin-top: 157.5px;
   margin-left: 36px;
+  top: 232.5px !important;
   left: 0px;
 }
 .div-covered-pointer {
   position: absolute;
-  margin-top: 317px;
+  margin-top: 317.5px;
   margin-left: 36px;
+  top: 232.5px !important;
   left: 0px;
 }
 .div-age-text, .div-covered-text {

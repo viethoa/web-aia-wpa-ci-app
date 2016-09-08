@@ -157,11 +157,11 @@ var endCovered = 500;
 var smokeAble = 16;
 var gender = -1;
 var smoker = -1;
-var age = -1;
+var age = 0;
 var ageTwo = -1;
 var ageThree = -1;
 var ageValueAtWidth = -1;
-var covered = -1;
+var covered = 50;
 var coveredValueAtWidth = -1;
 
 
@@ -361,8 +361,8 @@ function clearSmoker() {
 };
 
 function clearAgeAndCovered() {
-  age = -1;
-  covered = -1;
+  age = 0;
+  covered = startCovered;
   $.cookie("age", age);
   $.cookie("covered", covered);
   $.cookie("ageValueAtWidth", -1);
@@ -424,7 +424,7 @@ $(document).ready(function() {
 
   age = $.cookie('age');
   ageValueAtWidth = $.cookie('ageValueAtWidth');
-  if (age == -1) {
+  if (age == 0) {
     return;
   } else {
     enableNextButtonCoveredScollbar();
@@ -434,8 +434,8 @@ $(document).ready(function() {
 
   covered = $.cookie('covered');
   coveredValueAtWidth = $.cookie('coveredValueAtWidth');
-  if (covered == -1) {
-    return;
+  if (covered == 0) {
+    covered = startCovered;
   } else {
     coveredCalculater(null, coveredValueAtWidth);
     $('.div-covered-pointer').css('left', coveredValueAtWidth + "px");

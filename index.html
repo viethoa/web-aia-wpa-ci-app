@@ -17,7 +17,7 @@
 <body>
 
   <!-- toolbar -->
-  <header id="header" class="">
+  <header id="header">
     <div class="div-app-logo">
       <paper-button class="back-icon"></paper-button>
       <img class="img-logo" src="images/icon_logo.png">
@@ -238,8 +238,15 @@
   <script src="js/jquery-ui.min.js"></script>
   <script src="js/jquery.ui.touch-punch.min.js"></script>
   <script src="js/jquery.cookie.js"></script>
+  <script src="js/fastclick.js"></script>
   <!-- <script src="js/ripple.js"></script> -->
   <script src="js/main.js"></script>
+
+  <script type="text/javascript" charset="utf-8" async defer>
+    $(function() {
+      FastClick.attach(document.body);
+    });
+  </script>
 </body>
 </html>
 

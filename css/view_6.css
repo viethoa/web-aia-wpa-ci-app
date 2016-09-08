@@ -84,24 +84,22 @@ footer.footer-view-6 {
   -ms-transform: scale(1, 1);
   -webkit-transform: scale(1, 1);
   transform: scale(1, 1);
+  transition: transform 8s ease-in-out;
 }
 .span-second-year-old {
   -ms-transform: scale(0.5, 0.5);
   -webkit-transform: scale(0.5, 0.5);
   transform: scale(0.5, 0.5);
-  transition: all 8s linear;
 }
 .span-3rd-year-old {
   -ms-transform: scale(0.5, 0.5);
   -webkit-transform: scale(0.5, 0.5);
   transform: scale(0.5, 0.5);
-  transition: all 8s linear;
 }
 .span-4th-year-old {
   -ms-transform: scale(0.5, 0.5);
   -webkit-transform: scale(0.5, 0.5);
   transform: scale(0.5, 0.5);
-  transition: all 8s linear;
 }
 #div-age-bar-wrapper {
   top: 75px;
